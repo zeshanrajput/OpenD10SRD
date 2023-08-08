@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -260,69 +294,95 @@ ul.task-list li input[type="checkbox"] {
 <section id="choosing-a-power-level" class="level2" data-number="4.2">
 <h2 data-number="4.2" class="anchored" data-anchor-id="choosing-a-power-level"><span class="header-section-number">4.2</span> Choosing a Power Level</h2>
 <p>Implementations of OpenD10 will vary widely in power level. Some games will be about novice students learning the ways of the world, while others may feature demigods battling over the fate of the cosmos. Implementers set the power level by assigning a number of points at character creation. The following table suggests some limits for an average implementation:</p>
-<table class="table">
-<colgroup>
-<col style="width: 16%">
-<col style="width: 16%">
-<col style="width: 16%">
-<col style="width: 16%">
-<col style="width: 16%">
-<col style="width: 16%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Tier</th>
-<th>Description</th>
-<th>Starting Attribute Points</th>
-<th>Maximum Attribute Value Possible</th>
-<th>Starting Skill Points</th>
-<th>Experience Point Value of Tier Package</th>
-</tr>
-</thead>
+<div class="cell" data-execution_count="1">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Derive Tiering Table</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: tbl-tiering</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: "The packages for characters starting in each tier."</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sysdef <span class="im">import</span> <span class="op">*</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>tiers <span class="op">=</span> [<span class="st">"NPC"</span>, <span class="st">"Novice"</span>, <span class="st">"Veteran"</span>, <span class="st">"Expert"</span>, <span class="st">"Hero"</span>]</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>attributes <span class="op">=</span> []</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>max_attributes <span class="op">=</span> []</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>skills <span class="op">=</span> []</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(tiers)):</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  attributes.append(starting_attributes <span class="op">+</span> i <span class="op">*</span> attributes_per_tier)</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  max_attributes.append(starting_max_attribute <span class="op">+</span> i <span class="op">*</span> max_attributes_per_tier)</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>  skills.append(starting_skills <span class="op">+</span> i <span class="op">*</span> skills_per_tier)</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>tiering <span class="op">=</span> {</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Tier"</span>: tiers,</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Starting Attribute Points"</span>: attributes,</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Maximum Possible Attribute Value"</span>: max_attributes,</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Starting Skill Points"</span>: skills</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>tier_table <span class="op">=</span> pd.DataFrame(tiering)</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>tier_table[<span class="st">"XP Value of Tier Package"</span>] <span class="op">=</span> tier_table[<span class="st">"Starting Attribute Points"</span>] <span class="op">*</span> xp_per_attribute <span class="op">+</span> tier_table[<span class="st">"Starting Skill Points"</span>] <span class="op">*</span> xp_per_skill</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>tier_table[<span class="st">"XP per Event"</span>] <span class="op">=</span> <span class="bu">round</span>((tier_table[<span class="st">"XP Value of Tier Package"</span>] <span class="op">-</span> tier_table[<span class="st">"XP Value of Tier Package"</span>].shift(<span class="dv">1</span>)) <span class="op">/</span> (tier_table.index.to_series() <span class="op">*</span> num_events_per_tier_rating))</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>display(md(tabulate(tier_table)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<table class="table table-sm table-striped small">
 <tbody>
 <tr class="odd">
 <td>0</td>
-<td>NPCs</td>
+<td style="text-align: left;">NPC</td>
 <td>200</td>
 <td>30</td>
-<td>50</td>
+<td style="text-align: right;">50</td>
 <td>2100</td>
+<td>nan</td>
 </tr>
 <tr class="even">
 <td>1</td>
-<td>New Heroes</td>
+<td style="text-align: left;">Novice</td>
 <td>225</td>
-<td>50</td>
-<td>125</td>
+<td>35</td>
+<td style="text-align: right;">125</td>
 <td>2500</td>
+<td>80</td>
 </tr>
 <tr class="odd">
 <td>2</td>
-<td>Veteran Heroes</td>
+<td style="text-align: left;">Veteran</td>
 <td>250</td>
-<td>50</td>
-<td>200</td>
+<td>40</td>
+<td style="text-align: right;">200</td>
 <td>2900</td>
+<td>40</td>
 </tr>
 <tr class="even">
 <td>3</td>
-<td>Epic Heroes</td>
+<td style="text-align: left;">Expert</td>
 <td>275</td>
-<td>50</td>
-<td>275</td>
+<td>45</td>
+<td style="text-align: right;">275</td>
 <td>3300</td>
+<td>27</td>
 </tr>
 <tr class="odd">
 <td>4</td>
-<td>Legendary Heroes</td>
+<td style="text-align: left;">Hero</td>
 <td>300</td>
 <td>50</td>
-<td>350</td>
+<td style="text-align: right;">350</td>
 <td>3700</td>
+<td>20</td>
 </tr>
 </tbody>
 </table>
-<p>This table assumes default values for experience points per attribute point, experience points per skill point, and so on. If you’d like to see or change these weights, see the system mechanics notebook on GitHub. This table assumes that all experience points are spent on attributes and skills. If you want your players to start with features, consider changing the point value of the tier package or lowering the starting numbers for skills and attributes.</p>
+</div>
+</div>
+<p>This table assumes default values for experience points per attribute point, experience points per skill point, and so on. If you’d like to see or change these weights, see the system definitions python file on GitHub. This table assumes that all experience points are spent on attributes and skills. If you want your players to start with features, consider changing the point value of the tier package or lowering the starting numbers for skills and attributes.</p>
 </section>
 <section id="classes-races-and-backgrounds" class="level2" data-number="4.3">
 <h2 data-number="4.3" class="anchored" data-anchor-id="classes-races-and-backgrounds"><span class="header-section-number">4.3</span> Classes, Races, and Backgrounds</h2>
