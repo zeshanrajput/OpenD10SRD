@@ -1,0 +1,177 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "OpenD10SRD",
+    "section": "",
+    "text": "1 Welcome\nOpenD10 is available as an “Open Access” HTML version on this site (insert GitHub pages link here) in addition to the usual print and e-book formats. This edition was initially published in August 2023 and will have errata fixed periodically. If you encounter any errata, please report them here (insert GitHub issues link here).\nThis website is and will always be free, licensed under the CC BY 4.0 License. Physical copies of this book are not yet available, but when it’s near a “First Edition” we will work on that."
+  },
+  {
+    "objectID": "ch02.html#license",
+    "href": "ch02.html#license",
+    "title": "2  Introduction",
+    "section": "2.1 License",
+    "text": "2.1 License\nThis work is licensed under the Creative Commons Attribution 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by/4.0/ or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA."
+  },
+  {
+    "objectID": "ch02.html#inspiration",
+    "href": "ch02.html#inspiration",
+    "title": "2  Introduction",
+    "section": "2.2 Inspiration",
+    "text": "2.2 Inspiration\nThis work is influenced by the many, many TTRPGs the we have played in the past. This includes, but is not limited to Dungeons and Dragons (3.5 and 5th Editions), GURPS, Shadowrun, West End Games Star Wars d6, OpenD6, Rifts, and more. While we are indebted to those works and thankful for the many hours of joy they have brought us, we endeavor to make OpenD10 a completely distinct effort that is free to all."
+  },
+  {
+    "objectID": "ch02.html#how-to-use-this-srd",
+    "href": "ch02.html#how-to-use-this-srd",
+    "title": "2  Introduction",
+    "section": "2.3 How to Use this SRD",
+    "text": "2.3 How to Use this SRD\nThis SRD is intended to be the template for your own implementation of OpenD10. When you’re ready to create your own game based on OpenD10, you will:\n\nCreate a branch of the OpenD10 SRD project on GitHub,\nRe-write the non-core chapters (like this one!) to match fit your game, and\nAdd any content needed to flesh out your game.\n\nThe following are the core chapters of OpenD10:\n\nChapter 03 - Mechanics\nChapter 08 - Attributes"
+  },
+  {
+    "objectID": "ch03.html#checks",
+    "href": "ch03.html#checks",
+    "title": "3  Mechanics",
+    "section": "3.1 Checks",
+    "text": "3.1 Checks\nTo determine if a character is successful at a task, Game Masters (GMs) assign a difficulty rating from 1 to 300, where 1 is impossible to fail and 300 is impossible for an individual to succeed. When assigning a difficulty rating, the GM considers factors such as the difficulty of the task, the environment, and the circumstances.\nHere are some examples of difficulty ratings:\n\n\n\n\n\n\n\n\nDifficulty Level\nDescription\nMore Detail\n\n\n\n\n50\nVery Easy\nUntrained people will succeed most of the time. No checks below this.\n\n\n75\nEasy\naverage untrained person can do this half of the time\n\n\n100\nModerate\naverage professional can do this half of the time\n\n\n125\nDifficult\nthe best an untrained person can do without help\n\n\n150\nVery Difficult\nthe best a professional can do without help\n\n\n300\nHeroic\nthe best anyone can possibly do without help\n\n\n\nThe character’s relevant attribute and skill ratings are subtracted from the difficulty rating to yield the target number. The player then rolls a d100. If the result is equal to or above the target number, the character succeeds. Otherwise the character fails at that task. The target number represents the minimum number that the player must roll on the d100 in order to succeed at the task.\nIf a player rolls a number that is 25 or more points above the difficulty number, they may achieve exceptional success. This means that they succeed at the task with ease, and they may also have some additional benefits, such as finding a hidden compartment or gaining a magical blessing. If a player rolls a number that is 25 or more points below the difficulty number, they may suffer an exceptional failure. This means that they fail at the task spectacularly, and they may also have some negative consequences, such as being injured or cursed.\nFinally, if a player rolls two zeros on the d100, this may be considered an automatic success, divine intervention, or anything else that the GM arbitrates. If a player rolls a 01 on the d100, this may be considered an automatic failure, the hand of fate, the Devil’s curse, or anything else that the GM deems necessary.\nThe GM has a lot of flexibility when it comes to arbitrating exceptional successes, failures, and divine intervention. They can decide how much of an impact these events have on the game, and they can also add some flavor to the events to make them more memorable.\nOpenD10 is a simple and easy-to-learn TTRPG that is perfect for players of all experience levels. It is also a versatile system that can be used to create a wide variety of fantasy and science fiction worlds."
+  },
+  {
+    "objectID": "ch04.html#basic-overview",
+    "href": "ch04.html#basic-overview",
+    "title": "4  Character Creation",
+    "section": "4.1 Basic Overview",
+    "text": "4.1 Basic Overview\n\nChoose a class.\nSketch-out your character concept.\nSelect a race, background, and other features (optional).\nAssign starting attribute points to attributes.\nAssign starting skill points to skills.\nPurchase gear and/or abilities.\nComplete character form."
+  },
+  {
+    "objectID": "ch04.html#choosing-a-power-level",
+    "href": "ch04.html#choosing-a-power-level",
+    "title": "4  Character Creation",
+    "section": "4.2 Choosing a Power Level",
+    "text": "4.2 Choosing a Power Level\nImplementations of OpenD10 will vary widely in power level. Some games will be about novice students learning the ways of the world, while others may feature demigods battling over the fate of the cosmos. Implementers set the power level by assigning a number of points at character creation. The following table suggests some limits for an average implementation:\n\n\n\n\n\n\n\n\n\n\n\nTier\nDescription\nStarting Attribute Points\nMaximum Attribute Value Possible\nStarting Skill Points\nExperience Point Value of Tier Package\n\n\n\n\n0\nNPCs\n200\n30\n50\n2100\n\n\n1\nNew Heroes\n225\n50\n125\n2500\n\n\n2\nVeteran Heroes\n250\n50\n200\n2900\n\n\n3\nEpic Heroes\n275\n50\n275\n3300\n\n\n4\nLegendary Heroes\n300\n50\n350\n3700\n\n\n\nThis table assumes default values for experience points per attribute point, experience points per skill point, and so on. If you’d like to see or change these weights, see the system mechanics notebook on GitHub. This table assumes that all experience points are spent on attributes and skills. If you want your players to start with features, consider changing the point value of the tier package or lowering the starting numbers for skills and attributes."
+  },
+  {
+    "objectID": "ch04.html#classes-races-and-backgrounds",
+    "href": "ch04.html#classes-races-and-backgrounds",
+    "title": "4  Character Creation",
+    "section": "4.3 Classes, Races, and Backgrounds",
+    "text": "4.3 Classes, Races, and Backgrounds\nMost implementations of OpenD10 will have a set of classes that fit the theme of that implementation. These may be mages and knights in a fantasy setting, spies and soldiers in contemporary settings, spaceship captains and temporal engineers in science-fiction settings, and so on. Classes should convey a sense of that character’s role on the team and be complementary with other classes to complete a wide variety of challenges.\nClasses are implemented as packages of skills and features. For example, a mage might have bonuses to magic skills and features that allow them access to supernatural (i.e. magical) abilities. Classes should be balanced against each other, so that no one class is significantly stronger or weaker than the others. To balance classes, ensure that the point values for the attributes, skills, and features they grant are equal.\nRaces are optional additional packages describing a character’s heritage that may be offered as part of an implementation. A fantasy or space opera setting may have many races, while a contemporary setting would only have one or a very few. Races should be used to convey natural talents (such as darkvision or sensitivity to gravity) but not stereotypes (such as ‘Dwarves usually don’t do magic’).\nBackgrounds are another type of package that may allow a player to select from thematically appropriate origins for their character. Both races and backgrounds are implemented as packages of skills and features. These need not necessarily be balanced - instead deduct a number of points from their character creation pool equal to the cost of the race or background."
+  },
+  {
+    "objectID": "ch04.html#attributes",
+    "href": "ch04.html#attributes",
+    "title": "4  Character Creation",
+    "section": "4.4 Attributes",
+    "text": "4.4 Attributes\nAll characters in OpenD10 share the same eight attributes regardless of implementation."
+  },
+  {
+    "objectID": "ch04.html#skills",
+    "href": "ch04.html#skills",
+    "title": "4  Character Creation",
+    "section": "4.5 Skills",
+    "text": "4.5 Skills\nAll characters in OpenD10 become skilled as a result of their experiences. These skills represent areas of particular expertise.\n\n4.5.1 Optional Rule: Proficiency\nIt is possible to have a proficiency-based skill system in an OpenD10 implementation. To do so:\n\nAllow players to select a number of skills at character creation, and divide the available skill points among those skills.\nAt character progression milestones, equally increment all selected skills."
+  },
+  {
+    "objectID": "ch04.html#features",
+    "href": "ch04.html#features",
+    "title": "4  Character Creation",
+    "section": "4.6 Features",
+    "text": "4.6 Features\nFeatures are the ways in which characters are exceptional. Some features are beneficial and cost character creation points, while others are detrimental and refund points. Some implementations may only allow features to be gained via class, background, and racial choices."
+  },
+  {
+    "objectID": "ch04.html#gear-and-abilities",
+    "href": "ch04.html#gear-and-abilities",
+    "title": "4  Character Creation",
+    "section": "4.7 Gear and Abilities",
+    "text": "4.7 Gear and Abilities\nGear is the generic name for a character’s possessions and represents tools that they have to enable them to solve certain problems more easily (or at all). A character’s starting gear is purchased by converting points from the character creation pool into credits. An example of a piece of gear could be a laser gun.\nAn ability is an inherent piece of ‘gear’ - some way that a character has to solve certain problems more easily (or at all). A character that could fire a laser beam from their eyes has an ability to do so. Abilities are purchased using experience points.\nThe cost of a piece of gear is normally derived from factors such as:\n\nThe bonus it confers to a check (the ‘quality’ of the gear),\nHow often that check will occur,\nWhether the gear is consumed when used,\nHow available the gear or its constituent parts are, and so on.\n\nThe cost of a piece of gear is derived the same way as the cost for an ability, except that gear is discounted for the ability to be stolen, broken, etc. In OpenD10 GMs must be cautious about the amount of loot players obtain, as this can equate to unexpected experience point gain and impact game balance."
+  },
+  {
+    "objectID": "ch04.html#complete-the-character-form",
+    "href": "ch04.html#complete-the-character-form",
+    "title": "4  Character Creation",
+    "section": "4.8 Complete the Character Form",
+    "text": "4.8 Complete the Character Form\nSome of a character’s parameters, like height and weight, are derived from their attributes. Others (such a defenses) come up so often that pre-calculating them can greatly accelerate game play."
+  },
+  {
+    "objectID": "ch08.html",
+    "href": "ch08.html",
+    "title": "8  Attributes",
+    "section": "",
+    "text": "Attributes reflect a character’s natural talent or capabilities, though they may increase slowly over time. The average value of an attribute for a nomal, non-heroic human being is 25.\nPhysical Attributes:\n\nStrength: Measures a character’s physical power, ability to deal significant damage in combat, and perform feats of strength.\nAgility: Determines a character’s speed, reflexes, and nimbleness, affecting their ability to dodge attacks and perform acrobatic maneuvers.\n\nMental Attributes:\n\nIntelligence: Represents a character’s ability to learn, solve puzzles, and comprehend complex information. It influences their proficiency with magic and strategic thinking.\nWisdom: Reflects a character’s intuition, perception, and common sense. It affects their ability to make sound judgments and resist mental manipulation.\n\nSocial Attributes:\n\nCharisma: Indicates a character’s charm, persuasiveness, and leadership skills. It helps them influence others and build alliances.\nManipulation: Measures a character’s cunning, deceit, and ability to manipulate others for their own gain.\n\nMeta Attributes:\n\nStamina: Determines a character’s physical endurance and resistance to fatigue. It directly affects their hit points, reflecting how much damage they can withstand in battle.\nWillpower: Represents a character’s mental resilience and strength of mind. It directly affects their mana points, reflecting their magical energy and ability to cast spells."
+  },
+  {
+    "objectID": "ch09.html",
+    "href": "ch09.html",
+    "title": "9  Skills",
+    "section": "",
+    "text": "The following is a list of common skills which implementations of OpenD10 may adapt or override to fit their theme. Example specializations are listed in parentheses.\n\nUnarmed Combat (Brawling, type of Martial Art)\nMelee Combat (Knives, Swords, Clubs, Staves)\nRanged Combat (Pistols, Rifles, SMGs, Shotguns, Energy Weapons, Thrown Weapons)\nDodge\nStealth (Sleight of Hand, Sneaking)\nAthletics (any sport, lifting, rock climbing, jumping/parkour, marathon running, sprinting, swimming)\nPerception (Visual, Auditory, Olfactory, Insight)\nRTI (resistance to interrogation)\nLanguages (specialization in a language grants fluency)\nCrafting/Engineering (Civil, Chemical, Electrical/Computer, Biomedical, Automaton, Demolitions, Smith, Carpenter, Alchemist)\nMedicine (First Aid, any medical subspecialty, Combat medicine/Emergency medicine)\nDrive (cars, trucks, tanks, motorcycles, trains)\nPilot (freighters, sailing vessels, speed boats, cargo ships, starfighters, space trawlers/transports, cruise ships, capital ships)\nPersuasion (bargain, debate, oration, elocution, storytelling, flirt/seduction)\nSocial Engineering (disguise, fast talk, acting, forgery)\nIntimidation\nEtiquette (Corporate, Streetwise, Government)\nScholar (particular field of study)\nSurvival (type of terrain, astrogation, naval navigation)\nPerformance (paint, song, dance, poetry)\nAnimal Handling (Taming, training, riding)\nInvestigation (Interview, Search, Research, Examine)\nSupernatural (see the supernatural section)"
+  },
+  {
+    "objectID": "ch10.html#codes-of-honor",
+    "href": "ch10.html#codes-of-honor",
+    "title": "10  Features",
+    "section": "10.1 Codes of Honor",
+    "text": "10.1 Codes of Honor\nValues are assigned on a scale of 1-5 where:\n\nOne (1) rarely limits the character’s ability to behave however they want, and\nFive (5) makes them incapable of doing anything other living in a controlled environment and assiduously adhering to their code.\n\nExamples:\n\nPirate’s Code (Value 1)\nAssassin’s Code (Value 2)\nChivalry (Value 3)\nBushido (Value 3)\nAscetic’s Code (Value 4)\nIsolationism (Value 5)"
+  },
+  {
+    "objectID": "ch13.html#physical-characteristics",
+    "href": "ch13.html#physical-characteristics",
+    "title": "13  Completing the Character Form",
+    "section": "13.1 Physical Characteristics",
+    "text": "13.1 Physical Characteristics\n\nBody Weight: 3x Strength kg.\nHeight: 6-8x Charisma cm.\nHit Points (HP): Constitution\nMana Points (MP): Willpower"
+  },
+  {
+    "objectID": "ch13.html#movement",
+    "href": "ch13.html#movement",
+    "title": "13  Completing the Character Form",
+    "section": "13.2 Movement",
+    "text": "13.2 Movement\n\nWalking speed: 3x Agility meters per minute, 3/10 Agility meters per round.\nSprinting speed: 4x (Agility + Athletics check) meters per minute, 4/10 (Agility + Athletics check) meters per round\nCost: 5mp / round, requires Focus (see Supernatural section). Modified by negative (body weight + items carried weight - 75)."
+  },
+  {
+    "objectID": "ch13.html#defenses",
+    "href": "ch13.html#defenses",
+    "title": "13  Completing the Character Form",
+    "section": "13.3 Defenses",
+    "text": "13.3 Defenses\n\nBlock: Strength + Unarmed Combat -or- Strength + Melee Combat (when armed)\nParry: Agility + Unarmed Combat -or- Agility + Melee Combat (when armed)\nAvoid: Agility + Dodge\nArmor: Sum of armor ratings of worn equipment\nMental: Willpower + Supernatural (if known) or Willpower + RTI"
+  },
+  {
+    "objectID": "ch14.html#creating-and-repairing-items",
+    "href": "ch14.html#creating-and-repairing-items",
+    "title": "14  Non-Combat Interactions",
+    "section": "14.1 Creating and Repairing Items",
+    "text": "14.1 Creating and Repairing Items\nThe Engineering skill is used to repair, modify, and create items. The GM assigns a difficulty rating based on how damaged the item is, how difficult parts are to obtain, the availability of tools and a workspace, and so on.\nGear can be modified a finite number of times. Each modification is increasingly more difficult, and heavily modified items are more expensive to obtain.\n\n14.1.1 Engineering / Repair Rolls:\n\nCritical Success: If making a modification, the number of times the items has been modified does not increase. If repairing an item, the number of times the item has been modified reduces by one.\nSuccess: The modification or repair is sucessful.\nFailure: The modification or repair is unsuccessful and the item is broken. The item must be repaired before future attempts to modify it are made.\nCritical Failure: The item is destroyed. Destroyed items cannot be repaired or salvaged.\n\n\n\n14.1.2 Example Modifications\n\nDamage: +1 pip\nRange/Targeting: -25 difficulty to one range segment (or add at 250 DL if previously —)\nFan/Beam Splitter/Cleave: +1 target per attack, multiply cost to use by number of targets.\nNetwork enabled/Enchanted/Spiritual (once only): can monitor weapon status instantly, can be fired and manipulated from a near plane, can fire into a near plane\nEfficient: Reduce cost to use ability by 10%, stacking additively. The cost could be represented as ammunition, energy cell usage, or mana points.\nArmor Piercing: Reduces victim’s mitigation rating by 10% per time this modification is made, stacking additively.\nAugment: Improves any benefit or detriment to a check an ability provides by 5."
+  },
+  {
+    "objectID": "ch14.html#investigation-scenes",
+    "href": "ch14.html#investigation-scenes",
+    "title": "14  Non-Combat Interactions",
+    "section": "14.2 Investigation Scenes",
+    "text": "14.2 Investigation Scenes\nThese scenes reflect the characters’ efforts to obtain information. This could be getting intel for a heist, researching an enemy’s diplomatic strengths and weakness, or anything else. GMs will generally have a list of clues or tidbits that the characters can discover through a variety of means. Initiative (or scene order) is determined by having the players roll a check adding their character’s highest mental attribute.\n\n14.2.1 Common Investigation Actions\n\nRecall: You attempt to recall something pertinent to your situation.\nResearch: You attempt to discern information using a library or similar resource available to you. Gain a bonus equal to the ten times the rating of your investigation resource.\nCall in a Favor: You call a contact to see if they know something relevant. Gain a bonus equal to ten times the rating of your investigation resource.\n\n\n\n14.2.2 Investigation Resources\n\nPublic (Rating 1): A resource that is freely available to anyone. The public library, city hall.\nRestricted (Rating 2): A resource that is available to anyone who has a membership. University libraries.\nElite (Rating 3): A resource that few know about, but anyone who tries hard enough can eventually get access to. Hacker havens, magical lodges.\nConfidential (Rating 4): Resources that are not normally available. Military archives, secret research laboratories.\nTop Secret (Rating 5): Highly confidential resources available to a very few. Classified government archives, corporate secret dossiers."
+  },
+  {
+    "objectID": "ch14.html#social-scenes",
+    "href": "ch14.html#social-scenes",
+    "title": "14  Non-Combat Interactions",
+    "section": "14.3 Social Scenes",
+    "text": "14.3 Social Scenes\nSocial scenes are when the characters must interact with one or a group of non-player characters (NPCs) to progress. Social scenes do not involve combat, though they can (and often do) shift rapidly into combat scenes. Initiative (or scene order) is determined by having the players roll a check adding their character’s highest social attribute.\n\n14.3.1 Common Social Actions\n\nGarner Insight: You attempt to read body language or interpret some other tell to gain an advantage.\nSpeak: You attempt to perform, persuade, decieve, intimidate, explain, or in some other way verbally interact with NPCs in the scene.\nExposit Fact: Using your experience or previously gained knowledge, you attempt to explain a fact relevant to the scene."
+  },
+  {
+    "objectID": "ch15.html",
+    "href": "ch15.html",
+    "title": "15  Combat",
+    "section": "",
+    "text": "Initiative / Scene Order: Agility check. One round is six seconds.\nOn your turn, in any order:\n\nOne movement\nOne action\nSpeak up to 3 seconds\n\nOn others’ turns: One reaction (once until your next turn)\n\n15.0.1 Common Combat Actions:\n\nAttack: Make an unarmed, melee, or ranged attack. Difficulty rating per weapon stats or defender’s defense rating (whichever is highest).\nDodge: Spend your turn avoiding damage. Double your Avoid defense rating.\nGrapple: Grapple an enemy combatant within reach. Strength or Agilty + Unarmed Combat check vs defense. If successful, see Grapple sub-section.\nHold Action: You hold an action to occur on someone else’s turn. On your turn you must clearly describe what action you are holding and what will trigger your action to occur. When the trigger occurs, you use your reaction to execute your held action. If your turn comes around before your held action is triggered, you lose your held action.\nUse Item: You use an item either on your person or in the environment you can access.\n\n\n\n15.0.2 Grapple\nDefender’s move is zero while grappled. Attacker’s move is halved. Attacker must move defender to an adjacent square during any movement or release the grapple. Both attacker and defender have a -50 penalty to attacks against targets other than each other while the defender is conscious and resisting. You may not grapple something more than two scales larger or smaller than you.\n\n\n15.0.3 Ranged Attacks\nCharacter Scale Ranges:\n0-2m (point blank), 3-10m (short), 11-24m (medium), 25+ meters (long).\n\n\n15.0.4 Scale\nCombat advantages derived from differences in size are represented using scale. Examples below are based on default size weighting.\nMechanics:\n\nSmaller scale combatants have a bonus to hit and a penalty to damage.\nLarger scale combatants have a penalty to hit and a bonus to damage.\nIf an attacker is using a weapon of a different scale than theirs, use the weapon’s scale instead.\nThe bonus or penalty to hit is equal to 10 to the power of the difference in the combatant ratings.\nPCs suffer this same penalty when using a weapon not their scale (unless there is a control module attached, such as a gun on a capital ship).\nThe bonus or penalty to damage is equal to a number of D10s equal to the difference in combat ratings.\n\n\n15.0.4.1 Scale Ratings:\n0: Tiny. Pixie, infant, rodent. Gear almost impossible to find.\n1: Small. Child, dwarf, gnome, cat, dog. Gear harder to find.\n2: Medium. Human, Elf, Orc.\n3: Large. Troll, Ogre, Cyclops, Motorcycle. Gear harder to find.\n4: Huge. Elephant, roc, young dragons, cars, wagons, dingies. Gear almost impossible to find.\n5: Gargantuan. Whale, adult dragons, semi truck. Highest possible character scale.\n6: Star Fighter. Star Fighters, Tanks.\n7: Small Ships. Gunboats.\n8 - 9: Medium Ships. Cargo Freighters, Star Freighters.\n12: Large Ships. Cargo Container Ships, Cruise Ships, Capital Ships.\n16: Planet.\n22: Star.\n\n\n\n15.0.5 Restoration\nMana Points are restored with food and rest. 1 MP is restored with consuming 100 calories of food and resting 5 minutes. For healthy organisms, after eating a full meal and getting a normal night of rest all MP are restored on awakening.\nHit Points restored naturally return at a rate of 1 HP per day of rest."
+  },
+  {
+    "objectID": "ch16.html#realms",
+    "href": "ch16.html#realms",
+    "title": "16  Supernatural",
+    "section": "16.1 Realms",
+    "text": "16.1 Realms\nThis SRD assumes a unified view of other planes of existence with the Material Plane being the point of origin. Implementations of OpenD10 may override this view, in which case adjust the remainder of this chapter to suit.\nIn the unified view of planes, the Material Plane is adjacent to ‘near planes’. Near planes resemble but are not the same as the Material Plane. For example, a church on the Material Plane might exist as a beacon of radiant light on the spiritual plane, or as a digital haven on the Net. Near planes connect to ‘far planes’. Far planes do not resemble the material plane, but expectations like the laws of physics will generally hold. Far planes are much more dangerous than near ones. Beyond the far planes are the ‘Far Realms’. These furthest reaches are completely alien to the material plane. No assumption can be made for any expectation based in reality, and the sanity of unprepared travelers is at risk.\nExamples:\n\n\n\nAxis\nNear Plane\nFar Plane\nFar Realm\n\n\n\n\nMaterial\nA Planet\nSpace\nSubspace\n\n\nMental\nSubconscious\nPsyche\nDreamscape\n\n\nTechnological\nThe Net\nResonance\nDeep Resonance\n\n\nMagical\nAstral Plane\nAstral Sea\nDeep Realm / Abyss\n\n\nSpiritual\nSpirit World\nFey Realm\nHeaven, Hell, Valhalla, etc."
+  },
+  {
+    "objectID": "ch16.html#abilities",
+    "href": "ch16.html#abilities",
+    "title": "16  Supernatural",
+    "section": "16.2 Abilities",
+    "text": "16.2 Abilities\nAbilities are supernatural manifestations fueled by energy from one axis. An AI draws from the technology realm when they scry, while an angel draws from the spiritual realms when they smite their foes. Similarly material beings with supernatural abilities draw strength from one axis. When the ‘Supernatural’ feature is selected, the player must identify which axis their character draws strength from. When the character learns the ‘Supernatural’ skill, they must also immediately specialize in their axis.\n\n16.2.1 Impact of a character’s Supernatural Axis\nEach possible supernatural axis has some strengths and weaknesses.\n\nMental: Psychic abilities have no somatic, verbal, or material requirements. They are the most costly to learn but are difficult to interrupt. Mental abilities do not diminish in the planes of other axes. Core Attribute: Manipulation.\nTechnological: Technological abilities may be paid for with credits instead of experience points. When chosen, the player may choose wetware or hardware. Hardware abilities, such as those from cybernetic implants, are discounted but cause a permanent reduction in mana pool. Wetware does not cause a reduction in mana pool but are more expensive. Core Attribute: Wisdom.\nMagical: Magical abilities require at least one somatic, verbal, and/or material component. As such, they are the easiest to interrupt or counter but are the most accessible supernatural axis. Core Attribute: Intelligence.\nSpiritual: Spiritual abilities derive from a patron deity or faction from the spiritual realms. Those patron deities may limit access to abilities, classes, or revoke abilities for behavior inconsistent with their goals. Core Attribute: Charisma.\nMaterial: Abilities powered by the material realm draw from the energy of the cosmos. Fusion reactors, chemical batteries, and gravity fall into this category. These abilities are accessed by purchasing gear which can be lost, stolen, or broken. The rules for purchasing gear are covered in Character Creation.\n\n\n\n16.2.2 Optional Rule: Single Class / Limited Classes\nA character may only have access to a few types of abilities from their axis, perhaps even as few as one. The ‘Supernatural’ feat is discounted by the ratio of selected classes over available classes. Optionally, certain supernatural axes may only have access to a subset of classes.\n\n\n16.2.3 Optional Rule: Technowizardry\nThe technology to artificially imbue a person with supernatural ability exists under this optional rule. For example, a character may be able to access the Net by implanting a neural interface and connecting to a computer. The Supernatural feat is discounted and part of it may be paid for with credits as per the Technological Axis section.\n\n\n16.2.4 Optional Rule: Restoring Humanity\nNormally mana pool reductions caused by purchasing hardware abilities can never be restored. Furthermore once a character’s mana pool is reduced it can never be increased again, even if a character’s Willpower is increased. Under this optional rule, a character’s mana pool increases normally when their Willpower is increased even after purchasing hardware abilities. Optionally, a character can buy additional mana points at the same cost as the ‘Resilient’ feature.\n\n\n16.2.5 Focus\nSome abilities can be sustained for a duration, others indefinitely. Abilities may require Focus to sustain. A character can only focus on one ability at a time. While holding focus on an ability, characters may use other abilities or take actions that do not require focus. A character may drop focus at any time, at which point the ability immediately ends.\n\n\n16.2.6 Opposing Abilities and Defenses\nSome abilities can be resisted. Defense ratings are calculated during the ‘Completing the Character Form’ section of Character Creation. The user of the ability rolls a d100 check adding their axis’ Core Attribute + Supernatural (axis) skill. If the roll exceeds the target’s defense rating, the ability is successful.\n\n\n16.2.7 Creating Abilities\nAbilities can have one of four effects on the game universe:\n\nThey can convert energy from one form to another (mana points),\nThey can do work (such as moving an object from one place to another),\nThey can restore or deplete integrity (hit points), and\nThey can confer bonuses or penalties to skill checks.\n\nSome abilities may have multiple simultaneous effects. Other abilities may be better modeled by a series of effects.\nAbilities have two costs: an initial cost to acquire the ability and a recurring cost to use the ability. The initial cost is usually paid in experience points as the character learns the ability. Purchasing gear and gaining technology abilities may be paid for partially or wholly in credits. The recurring cost is paid using mana points. Some gear may require credits as the recurring cost, such as when buying ammunition or energy cells.\n\n\n16.2.8 Improving Abilities\nAbilities can be learned multiple times, and each copy of an ability can be modified per the ‘Creating and Repairing Items’ section. The ‘Supernatural’ skill is used to modify or repair supernatural abilities. Abilities are always considered ‘Network enabled/Enchanted/Spiritual’ to the axis they draw power from."
+  }
+]
