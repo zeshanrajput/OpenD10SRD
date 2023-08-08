@@ -1,0 +1,36 @@
+# Features
+
+The following list of features is a suggestion which may be expanded upon or overridden in an OpenD10 implementation. 
+
+| Feature | Description | Value (in Experience Points) | 
+| ----- | ----- | ----- |
+| Unskilled (character creation only) | You’ve spent more time in life honing your natural talents rather than using them. You have fewer skill points to spend in character creation. | Gain 2x number of skill points surrendered. |
+| Untalented (character creation only) | You’re not as naturally as gifted as your peers. You have fewer attribute points to spend in character creation. | Gain 10x number of attribute points surrendered. |
+| Supernatural | You are one of the rare individuals that has supernatural ability. Allows the character to train in a supernatural skill. | Costs vary depending on tradition (see Supernatural section). |
+| Honorbound | You have sworn to follow a code of honor. Failure to do so may result in a decrease in magical or psychic ability, loss of status with a patron or faction, or something worse. | Gain 3x code of honor’s value. |
+| Unregistered | You have no recognized identity with local authorities. You will need a fake identity for many actions in civilized areas, but it will be harder for authorities to track you. | Gain 10. |
+| Ghost / AI | You exist on a different plane of existence from the material plane. You will need some way to interact with the material plane, but dangers on the material plane may not affect you. | Costs 50. |
+| Resilient | You are naturally hardier. You gain bonus hit points. | Costs 5x number of hit points gained. |
+| Exceptional Attribute | You are supernaturally gifted in an attribute. You have an attribute score higher than the maximum allowable. | Costs 20 points per attribute point beyond the maximum allowable. |
+| Specialized | You have specific training or experience within a skill. Confers a +10 bonus on checks where your specialization applies. May only be purchased once per skill. | Costs 5. |
+| Wealthy (Character Creation only) | You have an inheritance or some other lump sum of capital. | Costs 1 per thousand credits. |
+| Invested | You have access to ongoing dividends from some source. You earn bonus credits during event wrapups (GM’s discretion). | Costs 1 per 200 credits. |
+| Darkvision | You can see in dim light up to 15 meters away. Objects appear in hues of red and grey. | Costs 10. |
+
+    **Design Note**: Because credits are a form of experience points in OpenD10, the Invested feature allows for characters to essentially gain experience points over time without actively adventuring. This feature should be limited to situations where an implementation's game balance takes this feature into account. 
+
+## Codes of Honor
+
+Values are assigned on a scale of 1-5 where:
+
+* One (1) rarely limits the character's ability to behave however they want, and 
+* Five (5) makes them incapable of doing anything other living in a controlled environment and assiduously adhering to their code.
+
+Examples: 
+
+* Pirate's Code (Value 1)
+* Assassin's Code (Value 2)
+* Chivalry (Value 3)
+* Bushido (Value 3)
+* Ascetic's Code (Value 4)
+* Isolationism (Value 5)

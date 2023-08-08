@@ -1,0 +1,27 @@
+# Attributes
+
+Attributes reflect a character’s natural talent or capabilities, though they may increase slowly over time. The average value of an attribute for a nomal, non-heroic human being is 25. 
+
+Physical Attributes:
+
+1. Strength: Measures a character's physical power, ability to deal significant damage in combat, and perform feats of strength.
+
+2. Agility: Determines a character's speed, reflexes, and nimbleness, affecting their ability to dodge attacks and perform acrobatic maneuvers.
+
+Mental Attributes:
+
+1. Intelligence: Represents a character's ability to learn, solve puzzles, and comprehend complex information. It influences their proficiency with magic and strategic thinking.
+
+2. Wisdom: Reflects a character's intuition, perception, and common sense. It affects their ability to make sound judgments and resist mental manipulation.
+
+Social Attributes:
+
+1. Charisma: Indicates a character's charm, persuasiveness, and leadership skills. It helps them influence others and build alliances.
+
+2. Manipulation: Measures a character's cunning, deceit, and ability to manipulate others for their own gain.
+
+Meta Attributes:
+
+1. Stamina: Determines a character's physical endurance and resistance to fatigue. It directly affects their hit points, reflecting how much damage they can withstand in battle.
+
+2. Willpower: Represents a character's mental resilience and strength of mind. It directly affects their mana points, reflecting their magical energy and ability to cast spells.

@@ -1,0 +1,36 @@
+project:
+  type: book
+
+book:
+  title: "OpenD10SRD"
+  author: "Zeshan Rajput"
+  date: "8/8/2023"
+  chapters:
+    - index.qmd
+    - ch02.qmd
+    - ch03.qmd
+    - ch04.qmd
+    - ch05.qmd
+    - ch06.qmd
+    - ch07.qmd
+    - ch08.qmd
+    - ch09.qmd
+    - ch10.qmd
+    - ch11.qmd
+    - ch12.qmd
+    - ch13.qmd
+    - ch14.qmd
+    - ch15.qmd
+    - ch16.qmd
+    - references.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    theme: cosmo
+  pdf:
+    documentclass: scrreprt
+
+
+

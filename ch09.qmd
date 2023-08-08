@@ -1,0 +1,27 @@
+# Skills
+
+The following is a list of common skills which implementations of OpenD10 may adapt or override to fit their theme. Example specializations are listed in parentheses. 
+
+* Unarmed Combat (Brawling, type of Martial Art)
+* Melee Combat (Knives, Swords, Clubs, Staves)
+* Ranged Combat (Pistols, Rifles, SMGs, Shotguns, Energy Weapons, Thrown Weapons)
+* Dodge
+* Stealth (Sleight of Hand, Sneaking)
+* Athletics (any sport, lifting, rock climbing, jumping/parkour, marathon running, sprinting, swimming)
+* Perception (Visual, Auditory, Olfactory, Insight)
+* RTI (resistance to interrogation)
+* Languages (specialization in a language grants fluency)
+* Crafting/Engineering (Civil, Chemical, Electrical/Computer, Biomedical, Automaton, Demolitions, Smith, Carpenter, Alchemist)
+* Medicine (First Aid, any medical subspecialty, Combat medicine/Emergency medicine)
+* Drive (cars, trucks, tanks, motorcycles, trains)
+* Pilot (freighters, sailing vessels, speed boats, cargo ships, starfighters, space trawlers/transports, cruise ships, capital ships)
+* Persuasion (bargain, debate, oration, elocution, storytelling, flirt/seduction)
+* Social Engineering (disguise, fast talk, acting, forgery)
+* Intimidation
+* Etiquette (Corporate, Streetwise, Government)
+* Scholar (particular field of study)
+* Survival (type of terrain, astrogation, naval navigation)
+* Performance (paint, song, dance, poetry)
+* Animal Handling (Taming, training, riding)
+* Investigation (Interview, Search, Research, Examine)
+* Supernatural (see the supernatural section)

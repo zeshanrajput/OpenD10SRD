@@ -1,0 +1,31 @@
+# Mechanics
+
+OpenD10 is a tabletop roleplaying game (TTRPG) that uses two 10-sided dice (d10s), or a d100 if you prefer. Players roll the d10s to determine the outcome of a task. The first d10 represents the tens digit of the result, and the second d10 represents the units digit. The player adds the two results together to get a random number between 1 and 100.
+
+In addition to the d10s, OpenD10 also uses a system of attributes and skills. Attributes represent a character's abilities, with 0 representing the lowest possible ability and 100 representing the highest possible natural ability. Skills represent a character's learned abilities, such as Medicine, Athletics, and Persuasion. Skills are on the same 0 - 100 scale.
+
+## Checks
+
+To determine if a character is successful at a task, Game Masters (GMs) assign a difficulty rating from 1 to 300, where 1 is impossible to fail and 300 is impossible for an individual to succeed. 
+When assigning a difficulty rating, the GM considers factors such as the difficulty of the task, the environment, and the circumstances. 
+
+Here are some examples of difficulty ratings:
+
+| Difficulty Level | Description | More Detail |
+| ---------------- | ----------- | ----------- |
+| 50  | Very Easy | Untrained people will succeed most of the time. No checks below this. |
+| 75  | Easy | average untrained person can do this half of the time |
+| 100 | Moderate | average professional can do this half of the time |
+| 125 | Difficult | the best an untrained person can do without help |
+| 150 | Very Difficult | the best a professional can do without help |
+| 300 | Heroic | the best anyone can possibly do without help |
+
+The character’s relevant attribute and skill ratings are subtracted from the difficulty rating to yield the target number. The player then rolls a d100. If the result is equal to or above the target number, the character succeeds. Otherwise the character fails at that task. The target number represents the minimum number that the player must roll on the d100 in order to succeed at the task. 
+
+If a player rolls a number that is 25 or more points above the difficulty number, they may achieve exceptional success. This means that they succeed at the task with ease, and they may also have some additional benefits, such as finding a hidden compartment or gaining a magical blessing. If a player rolls a number that is 25 or more points below the difficulty number, they may suffer an exceptional failure. This means that they fail at the task spectacularly, and they may also have some negative consequences, such as being injured or cursed.
+
+Finally, if a player rolls two zeros on the d100, this may be considered an automatic success, divine intervention, or anything else that the GM arbitrates. If a player rolls a 01 on the d100, this may be considered an automatic failure, the hand of fate, the Devil's curse, or anything else that the GM deems necessary.
+
+The GM has a lot of flexibility when it comes to arbitrating exceptional successes, failures, and divine intervention. They can decide how much of an impact these events have on the game, and they can also add some flavor to the events to make them more memorable.
+
+OpenD10 is a simple and easy-to-learn TTRPG that is perfect for players of all experience levels. It is also a versatile system that can be used to create a wide variety of fantasy and science fiction worlds.

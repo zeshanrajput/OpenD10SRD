@@ -1,0 +1,20 @@
+# Completing the Character Form
+
+## Physical Characteristics
+* Body Weight: 3x Strength kg.
+* Height: 6-8x Charisma cm.
+* Hit Points (HP): Constitution
+* Mana Points (MP): Willpower
+
+## Movement
+
+* Walking speed: 3x Agility meters per minute, 3/10 Agility meters per round.
+* Sprinting speed: 4x (Agility + Athletics check) meters per minute, 4/10 (Agility + Athletics check) meters per round
+* Cost: 5mp / round, requires Focus (see Supernatural section). Modified by negative (body weight + items carried weight - 75).
+
+## Defenses
+* Block: Strength + Unarmed Combat -or- Strength + Melee Combat (when armed)
+* Parry: Agility + Unarmed Combat -or- Agility + Melee Combat (when armed)
+* Avoid: Agility + Dodge
+* Armor: Sum of armor ratings of worn equipment
+* Mental: Willpower + Supernatural (if known) or Willpower + RTI

@@ -1,0 +1,53 @@
+# Non-Combat Interactions
+
+Non-combat interactions provides rules on how characters may interact with their environment by building on the mechanics. Basic interactions with the environment are governed by checks, as described in [Checks](./ch03.qmd#checks). 
+
+## Creating and Repairing Items
+
+The Engineering skill is used to repair, modify, and create items. The GM assigns a difficulty rating based on how damaged the item is, how difficult parts are to obtain, the availability of tools and a workspace, and so on. 
+
+Gear can be modified a finite number of times. Each modification is increasingly more difficult, and heavily modified items are more expensive to obtain. 
+
+### Engineering / Repair Rolls:
+
+* Critical Success: If making a modification, the number of times the items has been modified does not increase. If repairing an item, the number of times the item has been modified reduces by one.
+* Success: The modification or repair is sucessful.
+* Failure: The modification or repair is unsuccessful and the item is broken. The item must be repaired before future attempts to modify it are made.
+* Critical Failure: The item is destroyed. Destroyed items cannot be repaired or salvaged.
+
+### Example Modifications
+
+* Damage: +1 pip
+* Range/Targeting: -25 difficulty to one range segment (or add at 250 DL if previously —)
+* Fan/Beam Splitter/Cleave: +1 target per attack, multiply cost to use by number of targets.
+* Network enabled/Enchanted/Spiritual (once only): can monitor weapon status instantly, can be fired and manipulated from a near plane, can fire into a near plane
+* Efficient: Reduce cost to use ability by 10%, stacking additively. The cost could be represented as ammunition, energy cell usage, or mana points.
+* Armor Piercing: Reduces victim's mitigation rating by 10% per time this modification is made, stacking additively.
+* Augment: Improves any benefit or detriment to a check an ability provides by 5.
+
+## Investigation Scenes
+
+These scenes reflect the characters' efforts to obtain information. This could be getting intel for a heist, researching an enemy's diplomatic strengths and weakness, or anything else. GMs will generally have a list of clues or tidbits that the characters can discover through a variety of means. Initiative (or scene order) is determined by having the players roll a check adding their character's highest mental attribute. 
+
+### Common Investigation Actions
+
+* Recall: You attempt to recall something pertinent to your situation.
+* Research: You attempt to discern information using a library or similar resource available to you. Gain a bonus equal to the ten times the rating of your investigation resource.
+* Call in a Favor:  You call a contact to see if they know something relevant. Gain a bonus equal to ten times the rating of your investigation resource.
+
+### Investigation Resources
+
+* Public (Rating 1): A resource that is freely available to anyone. The public library, city hall.
+* Restricted (Rating 2): A resource that is available to anyone who has a membership. University libraries.
+* Elite (Rating 3):  A resource that few know about, but anyone who tries hard enough can eventually get access to. Hacker havens, magical lodges.
+* Confidential (Rating 4): Resources that are not normally available. Military archives, secret research laboratories.
+* Top Secret (Rating 5): Highly confidential resources available to a very few. Classified government archives, corporate secret dossiers.
+
+## Social Scenes
+Social scenes are when the characters must interact with one or a group of non-player characters (NPCs) to progress. Social scenes do not involve combat, though they can (and often do) shift rapidly into combat scenes. Initiative (or scene order) is determined by having the players roll a check adding their character's highest social attribute.
+
+### Common Social Actions
+
+* Garner Insight: You attempt to read body language or interpret some other tell to gain an advantage.
+* Speak: You attempt to perform, persuade, decieve, intimidate, explain, or in some other way verbally interact with NPCs in the scene.
+* Exposit Fact: Using your experience or previously gained knowledge, you attempt to explain a fact relevant to the scene.

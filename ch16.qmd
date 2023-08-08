@@ -1,0 +1,60 @@
+# Supernatural
+
+## Realms
+This SRD assumes a unified view of other planes of existence with the Material Plane being the point of origin. Implementations of OpenD10 may override this view, in which case adjust the remainder of this chapter to suit. 
+
+In the unified view of planes, the Material Plane is adjacent to 'near planes'. Near planes resemble but are not the same as the Material Plane. For example, a church on the Material Plane might exist as a beacon of radiant light on the spiritual plane, or as a digital haven on the Net. Near planes connect to 'far planes'. Far planes do not resemble the material plane, but  expectations like the laws of physics will generally hold. Far planes are much more dangerous than near ones. Beyond the far planes are the 'Far Realms'. These furthest reaches are completely alien to the material plane. No assumption can be made for any expectation based in reality, and the sanity of unprepared travelers is at risk. 
+
+Examples:
+
+| Axis | Near Plane | Far Plane | Far Realm | 
+| ---- | ---------- | --------- | --------- | 
+| Material | A Planet | Space | Subspace |
+| Mental | Subconscious | Psyche | Dreamscape | 
+| Technological | The Net | Resonance | Deep Resonance |
+| Magical | Astral Plane | Astral Sea | Deep Realm / Abyss |
+| Spiritual | Spirit World | Fey Realm | Heaven, Hell, Valhalla, etc. |
+
+## Abilities
+
+Abilities are supernatural manifestations fueled by energy from one axis. An AI draws from the technology realm when they scry, while an angel draws from the spiritual realms when they smite their foes. Similarly material beings with supernatural abilities draw strength from one axis. When the 'Supernatural' feature is selected, the player must identify which axis their character draws strength from. When the character learns the 'Supernatural' skill, they must also immediately specialize in their axis.
+
+### Impact of a character's Supernatural Axis
+
+Each possible supernatural axis has some strengths and weaknesses.
+
+* Mental: Psychic abilities have no somatic, verbal, or material requirements. They are the most costly to learn but are difficult to interrupt. Mental abilities do not diminish in the planes of other axes. Core Attribute: Manipulation.
+* Technological: Technological abilities may be paid for with credits instead of experience points. When chosen, the player may choose wetware or hardware. Hardware abilities, such as those from cybernetic implants, are discounted but cause a permanent reduction in mana pool. Wetware does not cause a reduction in mana pool but are more expensive. Core Attribute: Wisdom.
+* Magical: Magical abilities require at least one somatic, verbal, and/or material component. As such, they are the easiest to interrupt or counter but are the most accessible supernatural axis. Core Attribute: Intelligence.
+* Spiritual: Spiritual abilities derive from a patron deity or faction from the spiritual realms. Those patron deities may limit access to abilities, classes, or revoke abilities for behavior inconsistent with their goals. Core Attribute: Charisma.
+* Material: Abilities powered by the material realm draw from the energy of the cosmos. Fusion reactors, chemical batteries, and gravity fall into this category. These abilities are accessed by purchasing gear which can be lost, stolen, or broken. The rules for purchasing gear are covered in [Character Creation](./ch04.qmd/#gear-and-abilities). 
+
+### Optional Rule: Single Class / Limited Classes
+A character may only have access to a few types of abilities from their axis, perhaps even as few as one. The 'Supernatural' feat is discounted by the ratio of selected classes over available classes. Optionally, certain supernatural axes may only have access to a subset of classes.
+
+### Optional Rule: Technowizardry
+The technology to artificially imbue a person with supernatural ability exists under this optional rule. For example, a character may be able to access the Net by implanting a neural interface and connecting to a computer. The Supernatural feat is discounted and part of it may be paid for with credits as per the Technological Axis section.
+
+### Optional Rule: Restoring Humanity
+Normally mana pool reductions caused by purchasing hardware abilities can never be restored. Furthermore once a character's mana pool is reduced it can never be increased again, even if a character's Willpower is increased. Under this optional rule, a character's mana pool increases normally when their Willpower is increased even after purchasing hardware abilities. Optionally, a character can buy additional mana points at the same cost as the 'Resilient' feature.
+
+### Focus
+Some abilities can be sustained for a duration, others indefinitely. Abilities may require Focus to sustain. A character can only focus on one ability at a time. While holding focus on an ability, characters may use other abilities or take actions that do not require focus. A character may drop focus at any time, at which point the ability immediately ends. 
+
+### Opposing Abilities and Defenses
+Some abilities can be resisted. Defense ratings are calculated during the '[Completing the Character Form](ch13.qmd/#completing-the-character-form)' section of Character Creation. The user of the ability rolls a d100 check adding their axis' Core Attribute + Supernatural (axis) skill. If the roll exceeds the target's defense rating, the ability is successful. 
+
+### Creating Abilities
+Abilities can have one of four effects on the game universe: 
+
+* They can convert energy from one form to another (mana points),
+* They can do work (such as moving an object from one place to another),
+* They can restore or deplete integrity (hit points), and
+* They can confer bonuses or penalties to skill checks.
+
+Some abilities may have multiple simultaneous effects. Other abilities may be better modeled by a series of effects. 
+
+Abilities have two costs: an initial cost to acquire the ability and a recurring cost to use the ability. The initial cost is usually paid in experience points as the character learns the ability. Purchasing gear and gaining technology abilities may be paid for partially or wholly in credits. The recurring cost is paid using mana points. Some gear may require credits as the recurring cost, such as when buying ammunition or energy cells. 
+
+### Improving Abilities
+Abilities can be learned multiple times, and each copy of an ability can be modified per the '[Creating and Repairing Items](./ch14.qmd/#creating-and-repairing-items)' section. The 'Supernatural' skill is used to modify or repair supernatural abilities. Abilities are always considered 'Network enabled/Enchanted/Spiritual' to the axis they draw power from.

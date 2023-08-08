@@ -1,0 +1,37 @@
+# Introduction
+
+OpenD10 is an open-source, freely available tabletop roleplaying game (TTRPG). OpenD10 is designed to be simple and easy to learn, while still providing a lot of depth and flexibility. It uses a d100 system to determine the outcome of actions, and it features a wide range of attributes and skills that players can use to customize their characters.
+
+Here are some of the features that make OpenD10 unique:
+
+* Open-source: Anyone can contribute to the development of OpenD10 by submitting feedback, testing the game, and creating content.
+* Simple and flexible: OpenD10 is easy to learn, but it still provides a lot of depth and flexibility for players to create their own unique characters and stories.
+* Supports a wide variety of genres: OpenD10 can be used to play a wide variety of genres, from fantasy to science fiction to horror.
+* Free: This system reference document is maintained by the community for all to enjoy for free, as long as you adhere to the terms of the License. 
+
+We invite you to join us in the development of OpenD10! You can get involved by:
+
+* Submitting feedback on the SRD
+* Testing the game and reporting issues on GitHub
+* Creating content for OpenD10, such as new races, classes, and spells, as pull requests
+
+## License
+
+This work is licensed under the Creative Commons Attribution 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by/4.0/ or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
+
+## Inspiration
+
+This work is influenced by the many, many TTRPGs the we have played in the past. This includes, but is not limited to Dungeons and Dragons (3.5 and 5th Editions), GURPS, Shadowrun, West End Games Star Wars d6, OpenD6, Rifts, and more. While we are indebted to those works and thankful for the many hours of joy they have brought us, we endeavor to make OpenD10 a completely distinct effort that is free to all. 
+
+## How to Use this SRD
+
+This SRD is intended to be the template for your own implementation of OpenD10. When you're ready to create your own game based on OpenD10, you will:
+
+* Create a branch of the OpenD10 SRD project on GitHub, 
+* Re-write the non-core chapters (like this one!) to match fit your game, and
+* Add any content needed to flesh out your game.
+
+The following are the core chapters of OpenD10: 
+
+* [Chapter 03 - Mechanics](./ch03.qmd)
+* [Chapter 08 - Attributes](./ch08.qmd)
