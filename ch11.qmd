@@ -1,3 +1,110 @@
 # Gear
 
+## Melee Weapons
+A character using a melee weapon adds 1/5 of their Strength to damage rolls. Some weapons may allow a player to add 1/5 of their Agility instead.
 
+```{python}
+# Build melee weapons table
+#| label: tbl-melee
+#| tbl-cap: Melee Weapons
+#| echo: false
+
+from sysdef import *
+
+melee_data = pd.DataFrame({
+    'Dagger': [0,3],
+    'Short Sword': [1,0],
+    'Long Sword': [1,2],
+    'Bastard Sword': [1,4],
+    'Great Sword': [2,0]
+    }
+).rename(index={0: "dice", 1: "pips"})
+
+# Design Note: Ranged weapons are more difficult to use than melee ones. Targets
+# are farther: harder to see, small movements of the barrel mean missing by
+# meters, etc. From a game balance perspective PCs at range have the advantage
+# against enemies that can only use melee abilities. This is balanced in two
+# places. When items are defined, the ability to use them at range is balanced
+# at each range segment. Some weapons are easier to use up close (75 or 100),
+# others almost impossible (a 300). In the combat balance section we'll address
+# the XP cost of ranged abilities - this will cover the cinematic balance.
+ranged_data = pd.DataFrame({
+    'Thrown Dagger': [0,3,75,125,300,300],
+    'Pistol': [2,0,100,75,125,250],
+    'Shotgun': [4,0,75,100,125,300],
+    'Assault Rifle': [3,2,150,100,100,150],
+    'Sniper Rifle': [5,0,250,150,125,100]
+    }
+).rename(index={0: "dice", 1: "pips", 2: "PB", 3: "S", 4: "M", 5: "L"})
+
+armor_data = pd.DataFrame({
+    'Blast Vest': [5],
+    'Blast Helmet': [2],
+    'Combat Jumpsuit': [4],
+    'Powered Assault Armor': [15],
+    'Armored Business Suit': [3]
+    }
+).rename(index={0: "pips"})
+
+melee_table = melee_data.T
+melee_table["Credit Cost"] = round(melee_pricer(melee_table["dice"],melee_table["pips"]) * (1 - gear_discount) * credits_per_xp)
+
+display(md(tabulate(melee_table,
+           headers=["Name","Dice Damage", "Pips Damage", "Credits Cost"])))
+```
+
+## Ranged Weapons
+Ranged weapons have difficulties associated with the ranges at which they can be used. In the following table:
+
+* 'PB' = Point Blank Range,
+* 'S' = Short Range,
+* 'M' = Moderate Range, and
+* 'L' = Long Range.
+
+More information on range is presented in the Combat section.
+
+```{python}
+# Build ranged weapons table
+#| label: tbl-ranged
+#| tbl-cap: Ranged Weapons
+#| echo: false
+
+ranged_table = ranged_data.T
+
+ranged_table["Credit Cost"] = round(ranged_pricer(ranged_table["dice"],
+                                                  ranged_table["pips"],
+                                                  ranged_table["PB"],
+                                                  ranged_table["S"],
+                                                  ranged_table["M"],
+                                                  ranged_table["L"])* credits_per_xp * (1 - gear_discount))
+
+display(md(tabulate(ranged_table,
+           headers=["Name","Dice Damage", "Pips Damage",
+                    "PB", "S", "M", "L", "Credits Cost"])))
+```
+
+## Armor
+
+```{python}
+# Build armor table
+#| label: tbl-armor
+#| tbl-cap: Armor
+#| echo: false
+
+armor_table = armor_data.T
+
+armor_table["Credit Cost"] = round(melee_pricer(0,armor_table["pips"]) * (1 - gear_discount) * credits_per_xp)
+
+display(md(tabulate(armor_table,
+           headers=["Name", "Armor Value", "Credits Cost"])))
+```
+
+## Other Gear
+
+```{python}
+display(md(f"For items that replicate a feature or ability, multiply the XP cost by {credits_per_xp * (1 - gear_discount)}."))
+```
+
+```{python}
+display(md(f"For all other gear multiply the real world cost in US Dollars by {credits_per_xp / 10}."))
+```

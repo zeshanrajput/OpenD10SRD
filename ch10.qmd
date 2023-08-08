@@ -2,20 +2,50 @@
 
 The following list of features is a suggestion which may be expanded upon or overridden in an OpenD10 implementation. 
 
-| Feature | Description | Value (in Experience Points) | 
-| ----- | ----- | ----- |
-| Unskilled (character creation only) | You’ve spent more time in life honing your natural talents rather than using them. You have fewer skill points to spend in character creation. | Gain 2x number of skill points surrendered. |
-| Untalented (character creation only) | You’re not as naturally as gifted as your peers. You have fewer attribute points to spend in character creation. | Gain 10x number of attribute points surrendered. |
-| Supernatural | You are one of the rare individuals that has supernatural ability. Allows the character to train in a supernatural skill. | Costs vary depending on tradition (see Supernatural section). |
-| Honorbound | You have sworn to follow a code of honor. Failure to do so may result in a decrease in magical or psychic ability, loss of status with a patron or faction, or something worse. | Gain 3x code of honor’s value. |
-| Unregistered | You have no recognized identity with local authorities. You will need a fake identity for many actions in civilized areas, but it will be harder for authorities to track you. | Gain 10. |
-| Ghost / AI | You exist on a different plane of existence from the material plane. You will need some way to interact with the material plane, but dangers on the material plane may not affect you. | Costs 50. |
-| Resilient | You are naturally hardier. You gain bonus hit points. | Costs 5x number of hit points gained. |
-| Exceptional Attribute | You are supernaturally gifted in an attribute. You have an attribute score higher than the maximum allowable. | Costs 20 points per attribute point beyond the maximum allowable. |
-| Specialized | You have specific training or experience within a skill. Confers a +10 bonus on checks where your specialization applies. May only be purchased once per skill. | Costs 5. |
-| Wealthy (Character Creation only) | You have an inheritance or some other lump sum of capital. | Costs 1 per thousand credits. |
-| Invested | You have access to ongoing dividends from some source. You earn bonus credits during event wrapups (GM’s discretion). | Costs 1 per 200 credits. |
-| Darkvision | You can see in dim light up to 15 meters away. Objects appear in hues of red and grey. | Costs 10. |
+```{python}
+# Create Features Table
+#| label: tbl-features
+#| tbl-cap: Features
+#| echo: false
+
+from sysdef import *
+
+features_table = pd.DataFrame({
+        'Unskilled': ["(Character Creation only). You've spent more time in life honing your natural talents rather than using them. You have fewer skill points to spend in character creation.",
+                      f"Gain {xp_per_skill} times the number of skill points surrendered."],
+        'Untalented': ["(Character Creation only). You’re not as naturally as gifted as your peers. You have fewer attribute points to spend in character creation.",
+                       f"Gain {xp_per_attribute} times the number of skill points surrendered."],
+        'Supernatural': ["You are one of the rare individuals that has supernatural ability. Allows the character to train in a supernatural skill.",
+                         f"Costs {xp_per_supernatural_class * len(supernatural_classes)}."],
+        'Honorbound': ["You have sworn to follow a code of honor. Failure to do so may result in a decrease in supernatural ability, loss of status with a patron or faction, or worse.",
+                       "Gain 3x the value of the code of honor."],
+        'Unregistered': ["You have no identity in most common societies. You will need a fake identity for many actions, but it will be harder for authorities to track you.",
+                       "Gain 10."],
+        'Ghost / AI': ["You exist on a different plane of existience. You will need some way to interact with the material plane, but dangers on the material plane may not affect you.",
+                       f"Costs {xp_to_ghost}."],
+        'Resilient': ["You are naturally hardier. You gain bonus hit points.",
+                      f"Costs {0.5 * xp_per_attribute} per hit point gained."],
+        'Exceptional Attribute': ["You are supernaturally talented in an attribute. You have an attribute score higher than the maximum allowable.",
+                        f"Costs {2 * xp_per_attribute} per attribute point over the maximum."],
+        'Specialized': ["You have specific training or experience within a skill. Confers a +10 bonus on checks where your specialization applied. May only be purchased once per skill.",
+                        f"Costs {2.5 * xp_per_skill}."],
+        'Wealthy': ["You have spent some of your time working or otherwise trading your skills for cash.",
+                    f"Costs 1 per {credits_per_xp} credits."],
+        'Invested': ["You have access to ongoing dividends from some source. You may earn bonus credits during event wrapups.",
+                     f"Costs 1 per {0.2 * credits_per_xp} credits."],
+        'Gifted': ["You are permanently bestowed with a supernatural sense, power, or ability. See the 'Supernatural' section for more information.",
+                   f"Costs {permanent_gifted_scalar} times the cost of the ability."],
+        'Educated': ["You have spent some of your earnings improving yourself.",
+                     f"Costs {credits_per_xp} credits per experience point gained."],
+        'Darkvision': ['You can see in dim light up to 15 meters away. Objects appear in hues of red and grey.', 'Costs 10.']
+        }
+    )
+
+features_table = features_table.sort_index(axis=1).T
+
+display(md(tabulate(features_table,
+           headers=["Name", "Description", "Value"])))
+```
 
     **Design Note**: Because credits are a form of experience points in OpenD10, the Invested feature allows for characters to essentially gain experience points over time without actively adventuring. This feature should be limited to situations where an implementation's game balance takes this feature into account. 
 

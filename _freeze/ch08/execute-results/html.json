@@ -1,0 +1,11 @@
+{
+  "hash": "790e0b556ab1a7bc1fc9c0755f41bd5d",
+  "result": {
+    "markdown": "# Attributes\n\nAttributes reflect a character’s natural talent or capabilities, though they may increase slowly over time. The average value of an attribute for a nomal, non-heroic human being is 25. \n\nPhysical Attributes:\n\n1. Strength: Measures a character's physical power, ability to deal significant damage in combat, and perform feats of strength.\n\n2. Agility: Determines a character's speed, reflexes, and nimbleness, affecting their ability to dodge attacks and perform acrobatic maneuvers.\n\nMental Attributes:\n\n1. Intelligence: Represents a character's ability to learn, solve puzzles, and comprehend complex information. It influences their proficiency with magic and strategic thinking.\n\n2. Wisdom: Reflects a character's intuition, perception, and common sense. It affects their ability to make sound judgments and resist mental manipulation.\n\nSocial Attributes:\n\n1. Charisma: Indicates a character's charm, persuasiveness, and leadership skills. It helps them influence others and build alliances.\n\n2. Manipulation: Measures a character's cunning, deceit, and ability to manipulate others for their own gain.\n\nMeta Attributes:\n\n1. Stamina: Determines a character's physical endurance and resistance to fatigue. It directly affects their hit points, reflecting how much damage they can withstand in battle.\n\n2. Willpower: Represents a character's mental resilience and strength of mind. It directly affects their mana points, reflecting their magical energy and ability to cast spells.\n\n::: {.cell execution_count=1}\n``` {.python .cell-code}\nattribute_names = [\"Strength\", \"Agility\", \"Intelligence\", \"Wisdom\", \n                   \"Charisma\", \"Manipulation\", \"Constitution\", \"Willpower\"]\n```\n:::\n\n\n",
+    "supporting": [
+      "ch08_files"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}

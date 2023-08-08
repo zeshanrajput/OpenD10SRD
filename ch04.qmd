@@ -14,15 +14,42 @@
 
 Implementations of OpenD10 will vary widely in power level. Some games will be about novice students learning the ways of the world, while others may feature demigods battling over the fate of the cosmos. Implementers set the power level by assigning a number of points at character creation. The following table suggests some limits for an average implementation:
 
-| Tier | Description | Starting Attribute Points | Maximum Attribute Value Possible | Starting Skill Points | Experience Point Value of Tier Package | 
-| ----- | ----- | ----- | ----- | ----- | ----- |
-| 0 | NPCs | 200 | 30 | 50 | 2100 | 
-| 1 | New Heroes | 225 | 50 | 125 | 2500 |
-| 2 | Veteran Heroes | 250 | 50 | 200 | 2900 |
-| 3 | Epic Heroes | 275 | 50 | 275 | 3300 |
-| 4 | Legendary Heroes | 300 | 50 | 350 | 3700 |
+```{python}
+# Derive Tiering Table
+#| label: tbl-tiering
+#| fig-cap: "The packages for characters starting in each tier."
+#| echo: false
 
-This table assumes default values for experience points per attribute point, experience points per skill point, and so on. If you'd like to see or change these weights, see the system mechanics notebook on GitHub. This table assumes that all experience points are spent on attributes and skills. If you want your players to start with features, consider changing the point value of the tier package or lowering the starting numbers for skills and attributes.
+from sysdef import *
+
+tiers = ["NPC", "Novice", "Veteran", "Expert", "Hero"]
+
+attributes = []
+max_attributes = []
+skills = []
+
+for i in range(len(tiers)):
+  attributes.append(starting_attributes + i * attributes_per_tier)
+  max_attributes.append(starting_max_attribute + i * max_attributes_per_tier)
+  skills.append(starting_skills + i * skills_per_tier)
+
+tiering = {
+    "Tier": tiers,
+    "Starting Attribute Points": attributes,
+    "Maximum Possible Attribute Value": max_attributes,
+    "Starting Skill Points": skills
+}
+
+tier_table = pd.DataFrame(tiering)
+
+tier_table["XP Value of Tier Package"] = tier_table["Starting Attribute Points"] * xp_per_attribute + tier_table["Starting Skill Points"] * xp_per_skill
+
+tier_table["XP per Event"] = round((tier_table["XP Value of Tier Package"] - tier_table["XP Value of Tier Package"].shift(1)) / (tier_table.index.to_series() * num_events_per_tier_rating))
+
+display(md(tabulate(tier_table)))
+```
+
+This table assumes default values for experience points per attribute point, experience points per skill point, and so on. If you'd like to see or change these weights, see the system definitions python file on GitHub. This table assumes that all experience points are spent on attributes and skills. If you want your players to start with features, consider changing the point value of the tier package or lowering the starting numbers for skills and attributes.
 
 ## Classes, Races, and Backgrounds
 

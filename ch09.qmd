@@ -25,3 +25,5 @@ The following is a list of common skills which implementations of OpenD10 may ad
 * Animal Handling (Taming, training, riding)
 * Investigation (Interview, Search, Research, Examine)
 * Supernatural (see the supernatural section)
+* Business
+* Skill 1

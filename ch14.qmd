@@ -25,9 +25,86 @@ Gear can be modified a finite number of times. Each modification is increasingly
 * Armor Piercing: Reduces victim's mitigation rating by 10% per time this modification is made, stacking additively.
 * Augment: Improves any benefit or detriment to a check an ability provides by 5.
 
+```{python}
+# Derive Modification Table
+#| label: tbl-mod
+#| tbl-cap: A table showing the difficulty to successively modify an item.
+
+from sysdef import *
+
+mod_difficulty = []
+time_to_mod = []
+mod_price = []
+
+for i in range(1 + item_modification_limit):
+  mod_difficulty.append(100 + (i * mod_difficulty_per_mod))
+  time_to_mod.append(pow(mod_time_scalar,i))
+
+for i in range(1 + 2 * item_modification_limit):
+  mod_price.append(pow(mod_cost_scalar,i))
+
+mod_data = {
+    "Difficulty to Mod/Repair": mod_difficulty,
+    "Time to Mod/Repair (in minutes)": time_to_mod,
+}
+
+mod_price_data = {
+    "Black Market Purchase Cost (times base price)": mod_price
+}
+
+mod_table = pd.DataFrame(mod_data)
+mod_price_table = pd.DataFrame(mod_price_data)
+
+display(md(tabulate(mod_table, 
+  headers=["Times Modified", "Difficulty to Mod/Repair", "Time to Mod/Repair (in mins)"])))
+```
+
+```{python}
+# Derive Modification Table
+#| label: tbl-modprice
+#| tbl-cap: A table showing the price of goods already modified.
+#| echo: false
+
+display(md(tabulate(mod_price_table, 
+  headers=["Times Modified", "Black Market Purchase Cost (times base price)"])))
+```
+
 ## Investigation Scenes
 
 These scenes reflect the characters' efforts to obtain information. This could be getting intel for a heist, researching an enemy's diplomatic strengths and weakness, or anything else. GMs will generally have a list of clues or tidbits that the characters can discover through a variety of means. Initiative (or scene order) is determined by having the players roll a check adding their character's highest mental attribute. 
+
+```{python}
+# Derive Investigation Table
+#| label: tbl-investigation
+#| fig-cap: "The cost of various ranks of investigation resources in experience points."
+#| echo: false
+
+investigation_ranks = [
+    "Public",
+    "Restricted",
+    "Elite",
+    "Confidential",
+    "Top Secret"]
+
+## Investigation Balance
+weight_per_rating = 10
+# This affects how much a PC having contacts or resources contributes to the 
+# progress of investigation scenes. Lower values highlight the PCs' skills more.
+
+rating = []
+
+for i in range(len(investigation_ranks)):
+  rating.append((i + 1) * weight_per_rating)
+
+investigation = {
+    "Description": investigation_ranks,
+    "Bonus": rating
+}
+
+investigation_table = pd.DataFrame(investigation)
+
+md(tabulate(investigation_table, headers=["Rating", "Name", "Bonus to Checks"]))
+```
 
 ### Common Investigation Actions
 

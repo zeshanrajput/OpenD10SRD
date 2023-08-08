@@ -66,6 +66,29 @@ Mechanics:
 
 22: Star.
 
+```{python}
+# Derive Scale Table
+#| label: tbl-scale
+#| fig-cap: "A table showing the average size of an organism at each scale."
+#| echo: false
+
+from sysdef import *
+
+size = []
+size.append(smallest_scale)
+
+for i in range(25):
+  size.append(size[i] * scale_scalar)
+
+scale_data = {
+    "Size (m)": size,
+}
+
+scale_table = pd.DataFrame(scale_data)
+
+display(md(tabulate(scale_table, headers=["Scale", "Size(m)"])))
+```
+
 ### Restoration
 Mana Points are restored with food and rest. 1 MP is restored with consuming 100 calories of food and resting 5 minutes. For healthy organisms, after eating a full meal and getting a normal night of rest all MP are restored on awakening.
 

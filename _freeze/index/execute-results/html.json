@@ -1,0 +1,11 @@
+{
+  "hash": "60b0b1414ea308bf540eed82d22294a2",
+  "result": {
+    "markdown": "# Welcome\n\nOpenD10 is available as an \"Open Access\" HTML version on this site (insert GitHub pages link here) in addition to the usual print and e-book formats. This edition was initially published in August 2023 and will have errata fixed periodically. If you encounter any errata, please report them here (insert GitHub issues link here). \n\nThis website is and will always be free, licensed under the [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) License. Physical copies of this book are not yet available, but when it's near a \"First Edition\" we will work on that. \n\n::: {.cell execution_count=1}\n``` {.python .cell-code}\n# Libraries\nfrom IPython.display import Markdown as md\nfrom datetime import date\nimport pandas as pd\nfrom tabulate import tabulate\n```\n:::\n\n\n",
+    "supporting": [
+      "index_files"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}
