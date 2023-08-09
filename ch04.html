@@ -166,7 +166,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./ch06.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Races</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Species</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -247,7 +247,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#basic-overview" id="toc-basic-overview" class="nav-link active" data-scroll-target="#basic-overview"><span class="header-section-number">4.1</span> Basic Overview</a></li>
   <li><a href="#choosing-a-power-level" id="toc-choosing-a-power-level" class="nav-link" data-scroll-target="#choosing-a-power-level"><span class="header-section-number">4.2</span> Choosing a Power Level</a></li>
-  <li><a href="#classes-races-and-backgrounds" id="toc-classes-races-and-backgrounds" class="nav-link" data-scroll-target="#classes-races-and-backgrounds"><span class="header-section-number">4.3</span> Classes, Races, and Backgrounds</a></li>
+  <li><a href="#classes-species-and-backgrounds" id="toc-classes-species-and-backgrounds" class="nav-link" data-scroll-target="#classes-species-and-backgrounds"><span class="header-section-number">4.3</span> Classes, Species, and Backgrounds</a></li>
   <li><a href="#attributes" id="toc-attributes" class="nav-link" data-scroll-target="#attributes"><span class="header-section-number">4.4</span> Attributes</a></li>
   <li><a href="#skills" id="toc-skills" class="nav-link" data-scroll-target="#skills"><span class="header-section-number">4.5</span> Skills</a>
   <ul class="collapse">
@@ -284,7 +284,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ol type="1">
 <li>Choose a class.</li>
 <li>Sketch-out your character concept.</li>
-<li>Select a race, background, and other features (optional).</li>
+<li>Select a species, background, and other features (optional).</li>
 <li>Assign starting attribute points to attributes.</li>
 <li>Assign starting skill points to skills.</li>
 <li>Purchase gear and/or abilities.</li>
@@ -304,92 +304,103 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sysdef <span class="im">import</span> <span class="op">*</span></span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>tiers <span class="op">=</span> [<span class="st">"NPC"</span>, <span class="st">"Novice"</span>, <span class="st">"Veteran"</span>, <span class="st">"Expert"</span>, <span class="st">"Hero"</span>]</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>attributes <span class="op">=</span> []</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>max_attributes <span class="op">=</span> []</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>skills <span class="op">=</span> []</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(tiers)):</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  attributes.append(starting_attributes <span class="op">+</span> i <span class="op">*</span> attributes_per_tier)</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  max_attributes.append(starting_max_attribute <span class="op">+</span> i <span class="op">*</span> max_attributes_per_tier)</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>  skills.append(starting_skills <span class="op">+</span> i <span class="op">*</span> skills_per_tier)</span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>tiering <span class="op">=</span> {</span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Tier"</span>: tiers,</span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Starting Attribute Points"</span>: attributes,</span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Maximum Possible Attribute Value"</span>: max_attributes,</span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Starting Skill Points"</span>: skills</span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>attributes <span class="op">=</span> []</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>max_attributes <span class="op">=</span> []</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>skills <span class="op">=</span> []</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(tiers)):</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  attributes.append(starting_attributes <span class="op">+</span> i <span class="op">*</span> attributes_per_tier)</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  max_attributes.append(starting_max_attribute <span class="op">+</span> i <span class="op">*</span> max_attributes_per_tier)</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  skills.append(starting_skills <span class="op">+</span> i <span class="op">*</span> skills_per_tier)</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>tiering <span class="op">=</span> {</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Tier"</span>: tiers,</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Starting Attribute Points"</span>: attributes,</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Maximum Possible Attribute Value"</span>: max_attributes,</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Starting Skill Points"</span>: skills</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>tier_table <span class="op">=</span> pd.DataFrame(tiering)</span>
 <span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>tier_table <span class="op">=</span> pd.DataFrame(tiering)</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>tier_table[<span class="st">"XP Value of Tier Package"</span>] <span class="op">=</span> tier_table[<span class="st">"Starting Attribute Points"</span>] <span class="op">*</span> xp_per_attribute <span class="op">+</span> tier_table[<span class="st">"Starting Skill Points"</span>] <span class="op">*</span> xp_per_skill</span>
 <span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>tier_table[<span class="st">"XP Value of Tier Package"</span>] <span class="op">=</span> tier_table[<span class="st">"Starting Attribute Points"</span>] <span class="op">*</span> xp_per_attribute <span class="op">+</span> tier_table[<span class="st">"Starting Skill Points"</span>] <span class="op">*</span> xp_per_skill</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>tier_table[<span class="st">"XP per Event"</span>] <span class="op">=</span> <span class="bu">round</span>((tier_table[<span class="st">"XP Value of Tier Package"</span>] <span class="op">-</span> tier_table[<span class="st">"XP Value of Tier Package"</span>].shift(<span class="dv">1</span>)) <span class="op">/</span> (tier_table.index.to_series() <span class="op">*</span> num_events_per_tier_rating))</span>
 <span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>tier_table[<span class="st">"XP per Event"</span>] <span class="op">=</span> <span class="bu">round</span>((tier_table[<span class="st">"XP Value of Tier Package"</span>] <span class="op">-</span> tier_table[<span class="st">"XP Value of Tier Package"</span>].shift(<span class="dv">1</span>)) <span class="op">/</span> (tier_table.index.to_series() <span class="op">*</span> num_events_per_tier_rating))</span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>display(md(tabulate(tier_table)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>display(md(tabulate(tier_table, headers<span class="op">=</span>[<span class="st">"Rank"</span>, <span class="st">"Description"</span>, </span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Starting Attribute Points"</span>, <span class="st">"Maximum Attribute Value"</span>, </span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Starting Skill Points"</span>, <span class="st">"Value of Tier Package (XP)"</span>, <span class="st">"XP per session"</span>])))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 <table class="table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: right;">Rank</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: right;">Starting Attribute Points</th>
+<th style="text-align: right;">Maximum Attribute Value</th>
+<th style="text-align: right;">Starting Skill Points</th>
+<th style="text-align: right;">Value of Tier Package (XP)</th>
+<th style="text-align: right;">XP per session</th>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
-<td>0</td>
+<td style="text-align: right;">0</td>
 <td style="text-align: left;">NPC</td>
-<td>200</td>
-<td>30</td>
-<td style="text-align: right;">50</td>
-<td>2100</td>
-<td>nan</td>
-</tr>
-<tr class="even">
-<td>1</td>
-<td style="text-align: left;">Novice</td>
-<td>225</td>
-<td>35</td>
-<td style="text-align: right;">125</td>
-<td>2500</td>
-<td>80</td>
-</tr>
-<tr class="odd">
-<td>2</td>
-<td style="text-align: left;">Veteran</td>
-<td>250</td>
-<td>40</td>
 <td style="text-align: right;">200</td>
-<td>2900</td>
-<td>40</td>
+<td style="text-align: right;">30</td>
+<td style="text-align: right;">50</td>
+<td style="text-align: right;">2100</td>
+<td style="text-align: right;">nan</td>
 </tr>
 <tr class="even">
-<td>3</td>
-<td style="text-align: left;">Expert</td>
-<td>275</td>
-<td>45</td>
-<td style="text-align: right;">275</td>
-<td>3300</td>
-<td>27</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">Novice</td>
+<td style="text-align: right;">225</td>
+<td style="text-align: right;">35</td>
+<td style="text-align: right;">125</td>
+<td style="text-align: right;">2500</td>
+<td style="text-align: right;">80</td>
 </tr>
 <tr class="odd">
-<td>4</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">Veteran</td>
+<td style="text-align: right;">250</td>
+<td style="text-align: right;">40</td>
+<td style="text-align: right;">200</td>
+<td style="text-align: right;">2900</td>
+<td style="text-align: right;">40</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">3</td>
+<td style="text-align: left;">Expert</td>
+<td style="text-align: right;">275</td>
+<td style="text-align: right;">45</td>
+<td style="text-align: right;">275</td>
+<td style="text-align: right;">3300</td>
+<td style="text-align: right;">27</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">4</td>
 <td style="text-align: left;">Hero</td>
-<td>300</td>
-<td>50</td>
+<td style="text-align: right;">300</td>
+<td style="text-align: right;">50</td>
 <td style="text-align: right;">350</td>
-<td>3700</td>
-<td>20</td>
+<td style="text-align: right;">3700</td>
+<td style="text-align: right;">20</td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
-<p>This table assumes default values for experience points per attribute point, experience points per skill point, and so on. If you’d like to see or change these weights, see the system definitions python file on GitHub. This table assumes that all experience points are spent on attributes and skills. If you want your players to start with features, consider changing the point value of the tier package or lowering the starting numbers for skills and attributes.</p>
+<p>This table assumes default values for experience points per attribute point, experience points per skill point, and so on. If you’d like to see or change these weights, see the system definitions python file on GitHub. This table assumes that all experience points are spent on attributes and skills. If you want your players to start with more features, consider changing the point value of the tier package or lowering the starting numbers for skills and attributes.</p>
 </section>
-<section id="classes-races-and-backgrounds" class="level2" data-number="4.3">
-<h2 data-number="4.3" class="anchored" data-anchor-id="classes-races-and-backgrounds"><span class="header-section-number">4.3</span> Classes, Races, and Backgrounds</h2>
+<section id="classes-species-and-backgrounds" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="classes-species-and-backgrounds"><span class="header-section-number">4.3</span> Classes, Species, and Backgrounds</h2>
 <p>Most implementations of OpenD10 will have a set of classes that fit the theme of that implementation. These may be mages and knights in a fantasy setting, spies and soldiers in contemporary settings, spaceship captains and temporal engineers in science-fiction settings, and so on. Classes should convey a sense of that character’s role on the team and be complementary with other classes to complete a wide variety of challenges.</p>
 <p>Classes are implemented as packages of skills and features. For example, a mage might have bonuses to magic skills and features that allow them access to supernatural (i.e.&nbsp;magical) abilities. Classes should be balanced against each other, so that no one class is significantly stronger or weaker than the others. To balance classes, ensure that the point values for the attributes, skills, and features they grant are equal.</p>
-<p>Races are optional additional packages describing a character’s heritage that may be offered as part of an implementation. A fantasy or space opera setting may have many races, while a contemporary setting would only have one or a very few. Races should be used to convey natural talents (such as darkvision or sensitivity to gravity) but not stereotypes (such as ‘Dwarves usually don’t do magic’).</p>
-<p>Backgrounds are another type of package that may allow a player to select from thematically appropriate origins for their character. Both races and backgrounds are implemented as packages of skills and features. These need not necessarily be balanced - instead deduct a number of points from their character creation pool equal to the cost of the race or background.</p>
+<p>Species are optional additional packages describing a character’s lineage that may be offered as part of an implementation. A fantasy or space opera setting may have many species, while a contemporary setting would only have one or a very few. Species should be used to convey natural talents (such as darkvision or sensitivity to gravity) but not stereotypes (such as ‘Catfolk tend to be thieves and cutthroats.’).</p>
+<p>Backgrounds are another type of package that may allow a player to select from thematically appropriate origins for their character. Both species and backgrounds are implemented as packages of skills and features. These need not necessarily be balanced - instead deduct a number of points from their character creation pool equal to the cost of the species or background.</p>
 </section>
 <section id="attributes" class="level2" data-number="4.4">
 <h2 data-number="4.4" class="anchored" data-anchor-id="attributes"><span class="header-section-number">4.4</span> Attributes</h2>

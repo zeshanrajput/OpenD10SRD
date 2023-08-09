@@ -166,7 +166,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./ch06.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Races</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Species</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -285,46 +285,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sysdef <span class="im">import</span> <span class="op">*</span></span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>melee_data <span class="op">=</span> pd.DataFrame({</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Dagger'</span>: [<span class="dv">0</span>,<span class="dv">3</span>],</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Short Sword'</span>: [<span class="dv">1</span>,<span class="dv">0</span>],</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Long Sword'</span>: [<span class="dv">1</span>,<span class="dv">2</span>],</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Bastard Sword'</span>: [<span class="dv">1</span>,<span class="dv">4</span>],</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Great Sword'</span>: [<span class="dv">2</span>,<span class="dv">0</span>]</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>).rename(index<span class="op">=</span>{<span class="dv">0</span>: <span class="st">"dice"</span>, <span class="dv">1</span>: <span class="st">"pips"</span>})</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Design Note: Ranged weapons are more difficult to use than melee ones. Targets</span></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="co"># are farther: harder to see, small movements of the barrel mean missing by</span></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="co"># meters, etc. From a game balance perspective PCs at range have the advantage</span></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="co"># against enemies that can only use melee abilities. This is balanced in two</span></span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="co"># places. When items are defined, the ability to use them at range is balanced</span></span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="co"># at each range segment. Some weapons are easier to use up close (75 or 100),</span></span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="co"># others almost impossible (a 300). In the combat balance section we'll address</span></span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="co"># the XP cost of ranged abilities - this will cover the cinematic balance.</span></span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>ranged_data <span class="op">=</span> pd.DataFrame({</span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Thrown Dagger'</span>: [<span class="dv">0</span>,<span class="dv">3</span>,<span class="dv">75</span>,<span class="dv">125</span>,<span class="dv">300</span>,<span class="dv">300</span>],</span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Pistol'</span>: [<span class="dv">2</span>,<span class="dv">0</span>,<span class="dv">100</span>,<span class="dv">75</span>,<span class="dv">125</span>,<span class="dv">250</span>],</span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Shotgun'</span>: [<span class="dv">4</span>,<span class="dv">0</span>,<span class="dv">75</span>,<span class="dv">100</span>,<span class="dv">125</span>,<span class="dv">300</span>],</span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Assault Rifle'</span>: [<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">150</span>,<span class="dv">100</span>,<span class="dv">100</span>,<span class="dv">150</span>],</span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Sniper Rifle'</span>: [<span class="dv">5</span>,<span class="dv">0</span>,<span class="dv">250</span>,<span class="dv">150</span>,<span class="dv">125</span>,<span class="dv">100</span>]</span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>).rename(index<span class="op">=</span>{<span class="dv">0</span>: <span class="st">"dice"</span>, <span class="dv">1</span>: <span class="st">"pips"</span>, <span class="dv">2</span>: <span class="st">"PB"</span>, <span class="dv">3</span>: <span class="st">"S"</span>, <span class="dv">4</span>: <span class="st">"M"</span>, <span class="dv">5</span>: <span class="st">"L"</span>})</span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>armor_data <span class="op">=</span> pd.DataFrame({</span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Blast Vest'</span>: [<span class="dv">5</span>],</span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Blast Helmet'</span>: [<span class="dv">2</span>],</span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Combat Jumpsuit'</span>: [<span class="dv">4</span>],</span>
-<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Powered Assault Armor'</span>: [<span class="dv">15</span>],</span>
-<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Armored Business Suit'</span>: [<span class="dv">3</span>]</span>
-<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>).rename(index<span class="op">=</span>{<span class="dv">0</span>: <span class="st">"pips"</span>})</span>
-<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>melee_table <span class="op">=</span> melee_data.T</span>
-<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>melee_table[<span class="st">"Credit Cost"</span>] <span class="op">=</span> <span class="bu">round</span>(melee_pricer(melee_table[<span class="st">"dice"</span>],melee_table[<span class="st">"pips"</span>]) <span class="op">*</span> (<span class="dv">1</span> <span class="op">-</span> gear_discount) <span class="op">*</span> credits_per_xp)</span>
-<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>display(md(tabulate(melee_table,</span>
-<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>           headers<span class="op">=</span>[<span class="st">"Name"</span>,<span class="st">"Dice Damage"</span>, <span class="st">"Pips Damage"</span>, <span class="st">"Credits Cost"</span>])))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>melee_data <span class="op">=</span> pd.read_json(<span class="st">'melee_weapons.json'</span>)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>melee_table <span class="op">=</span> melee_data.T</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>melee_table[<span class="st">"Credit Cost"</span>] <span class="op">=</span> <span class="bu">round</span>(melee_pricer(melee_table[<span class="st">"dice"</span>],melee_table[<span class="st">"pips"</span>]) <span class="op">*</span> (<span class="dv">1</span> <span class="op">-</span> gear_discount) <span class="op">*</span> credits_per_xp)</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>display(md(tabulate(melee_table,</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>           headers<span class="op">=</span>[<span class="st">"Name"</span>,<span class="st">"Dice Damage"</span>, <span class="st">"Pips Damage"</span>, <span class="st">"Credits Cost"</span>])))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 <table class="table table-sm table-striped small">
@@ -390,18 +357,30 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co">#| tbl-cap: Ranged Weapons</span></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>ranged_table <span class="op">=</span> ranged_data.T</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>ranged_table[<span class="st">"Credit Cost"</span>] <span class="op">=</span> <span class="bu">round</span>(ranged_pricer(ranged_table[<span class="st">"dice"</span>],</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>                                                  ranged_table[<span class="st">"pips"</span>],</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>                                                  ranged_table[<span class="st">"PB"</span>],</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>                                                  ranged_table[<span class="st">"S"</span>],</span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>                                                  ranged_table[<span class="st">"M"</span>],</span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>                                                  ranged_table[<span class="st">"L"</span>])<span class="op">*</span> credits_per_xp <span class="op">*</span> (<span class="dv">1</span> <span class="op">-</span> gear_discount))</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Design Note: Ranged weapons are more difficult to use than melee ones. Targets</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co"># are farther: harder to see, small movements of the barrel mean missing by</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co"># meters, etc. From a game balance perspective PCs at range have the advantage</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co"># against enemies that can only use melee abilities. This is balanced in two</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="co"># places. When items are defined, the ability to use them at range is balanced</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="co"># at each range segment. Some weapons are easier to use up close (75 or 100),</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="co"># others almost impossible (a 300). In the combat balance section we'll address</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="co"># the XP cost of ranged abilities - this will cover the cinematic balance.</span></span>
 <span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>display(md(tabulate(ranged_table,</span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>           headers<span class="op">=</span>[<span class="st">"Name"</span>,<span class="st">"Dice Damage"</span>, <span class="st">"Pips Damage"</span>,</span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>                    <span class="st">"PB"</span>, <span class="st">"S"</span>, <span class="st">"M"</span>, <span class="st">"L"</span>, <span class="st">"Credits Cost"</span>])))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>ranged_data <span class="op">=</span> pd.read_json(<span class="st">'ranged_weapons.json'</span>)</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>ranged_table <span class="op">=</span> ranged_data.T</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>ranged_table[<span class="st">"Credit Cost"</span>] <span class="op">=</span> <span class="bu">round</span>(ranged_pricer(ranged_table[<span class="st">"dice"</span>],</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>                                                  ranged_table[<span class="st">"pips"</span>],</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>                                                  ranged_table[<span class="st">"PB"</span>],</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>                                                  ranged_table[<span class="st">"S"</span>],</span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>                                                  ranged_table[<span class="st">"M"</span>],</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>                                                  ranged_table[<span class="st">"L"</span>])<span class="op">*</span> credits_per_xp <span class="op">*</span> </span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>                                                  (<span class="dv">1</span> <span class="op">-</span> gear_discount))</span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>display(md(tabulate(ranged_table,</span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>           headers<span class="op">=</span>[<span class="st">"Name"</span>,<span class="st">"Dice Damage"</span>, <span class="st">"Pips Damage"</span>,</span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>                    <span class="st">"PB"</span>, <span class="st">"S"</span>, <span class="st">"M"</span>, <span class="st">"L"</span>, <span class="st">"Credits Cost"</span>])))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 <table class="table table-sm table-striped small">
@@ -483,12 +462,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co">#| tbl-cap: Armor</span></span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>armor_table <span class="op">=</span> armor_data.T</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>armor_data <span class="op">=</span> pd.read_json(<span class="st">'armor.json'</span>)</span>
 <span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>armor_table[<span class="st">"Credit Cost"</span>] <span class="op">=</span> <span class="bu">round</span>(melee_pricer(<span class="dv">0</span>,armor_table[<span class="st">"pips"</span>]) <span class="op">*</span> (<span class="dv">1</span> <span class="op">-</span> gear_discount) <span class="op">*</span> credits_per_xp)</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>armor_table <span class="op">=</span> armor_data.T</span>
 <span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>display(md(tabulate(armor_table,</span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>           headers<span class="op">=</span>[<span class="st">"Name"</span>, <span class="st">"Armor Value"</span>, <span class="st">"Credits Cost"</span>])))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>armor_table[<span class="st">"Credit Cost"</span>] <span class="op">=</span> <span class="bu">round</span>(melee_pricer(<span class="dv">0</span>, armor_table[<span class="st">"pips"</span>]) <span class="op">*</span> </span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>    (<span class="dv">1</span> <span class="op">-</span> gear_discount) <span class="op">*</span> credits_per_xp)</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>display(md(tabulate(armor_table,</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>           headers<span class="op">=</span>[<span class="st">"Name"</span>, <span class="st">"Armor Value"</span>, <span class="st">"Credits Cost"</span>])))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 <table class="table table-sm table-striped small">
