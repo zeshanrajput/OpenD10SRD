@@ -4,7 +4,7 @@
 
 1. Choose a class.
 1. Sketch-out your character concept.
-1. Select a race, background, and other features (optional). 
+1. Select a species, background, and other features (optional). 
 1. Assign starting attribute points to attributes.
 1. Assign starting skill points to skills.
 1. Purchase gear and/or abilities.
@@ -21,8 +21,6 @@ Implementations of OpenD10 will vary widely in power level. Some games will be a
 #| echo: false
 
 from sysdef import *
-
-tiers = ["NPC", "Novice", "Veteran", "Expert", "Hero"]
 
 attributes = []
 max_attributes = []
@@ -46,20 +44,22 @@ tier_table["XP Value of Tier Package"] = tier_table["Starting Attribute Points"]
 
 tier_table["XP per Event"] = round((tier_table["XP Value of Tier Package"] - tier_table["XP Value of Tier Package"].shift(1)) / (tier_table.index.to_series() * num_events_per_tier_rating))
 
-display(md(tabulate(tier_table)))
+display(md(tabulate(tier_table, headers=["Rank", "Description", 
+  "Starting Attribute Points", "Maximum Attribute Value", 
+  "Starting Skill Points", "Value of Tier Package (XP)", "XP per session"])))
 ```
 
-This table assumes default values for experience points per attribute point, experience points per skill point, and so on. If you'd like to see or change these weights, see the system definitions python file on GitHub. This table assumes that all experience points are spent on attributes and skills. If you want your players to start with features, consider changing the point value of the tier package or lowering the starting numbers for skills and attributes.
+This table assumes default values for experience points per attribute point, experience points per skill point, and so on. If you'd like to see or change these weights, see the system definitions python file on GitHub. This table assumes that all experience points are spent on attributes and skills. If you want your players to start with more features, consider changing the point value of the tier package or lowering the starting numbers for skills and attributes.
 
-## Classes, Races, and Backgrounds
+## Classes, Species, and Backgrounds
 
 Most implementations of OpenD10 will have a set of classes that fit the theme of that implementation. These may be mages and knights in a fantasy setting, spies and soldiers in contemporary settings, spaceship captains and temporal engineers in science-fiction settings, and so on. Classes should convey a sense of that character’s role on the team and be complementary with other classes to complete a wide variety of challenges. 
 
 Classes are implemented as packages of skills and features. For example, a mage might have bonuses to magic skills and features that allow them access to supernatural (i.e. magical) abilities. Classes should be balanced against each other, so that no one class is significantly stronger or weaker than the others. To balance classes, ensure that the point values for the attributes, skills, and features they grant are equal. 
 
-Races are optional additional packages describing a character’s heritage that may be offered as part of an implementation. A fantasy or space opera setting may have many races, while a contemporary setting would only have one or a very few. Races should be used to convey natural talents (such as darkvision or sensitivity to gravity) but not stereotypes (such as ‘Dwarves usually don’t do magic'). 
+Species are optional additional packages describing a character’s lineage that may be offered as part of an implementation. A fantasy or space opera setting may have many species, while a contemporary setting would only have one or a very few. Species should be used to convey natural talents (such as darkvision or sensitivity to gravity) but not stereotypes (such as ‘Catfolk tend to be thieves and cutthroats.'). 
 
-Backgrounds are another type of package that may allow a player to select from thematically appropriate origins for their character. Both races and backgrounds are implemented as packages of skills and features. These need not necessarily be balanced - instead deduct a number of points from their character creation pool equal to the cost of the race or background. 
+Backgrounds are another type of package that may allow a player to select from thematically appropriate origins for their character. Both species and backgrounds are implemented as packages of skills and features. These need not necessarily be balanced - instead deduct a number of points from their character creation pool equal to the cost of the species or background. 
 
 ## Attributes
 

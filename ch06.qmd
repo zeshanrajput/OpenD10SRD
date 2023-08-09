@@ -1,1 +1,3 @@
-# Races
+# Species
+
+Implementations may modify this chapter to list the species available in their world, if they choose to use species. A few sample species will be added here soon.

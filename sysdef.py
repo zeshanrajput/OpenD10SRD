@@ -5,56 +5,40 @@ from IPython.display import display, Markdown as md
 from datetime import date
 import pandas as pd
 from tabulate import tabulate
+import json
 
 # Game Identity
 
 # This code block defines the identity of the game. Here you'll find
 # what tiers are called, how many there are, and so on.
 
-attribute_names = ["Strength", "Agility", "Intelligence", "Wisdom",
-                   "Charisma", "Manipulation", "Constitution", "Willpower"]
-skill_names = [
-    "Unarmed",
-    "Melee",
-    "Ranged Weapons",
-    "Dodge",
-    "Stealth",
-    "Athletics",
-    "Perception",
-    "Supernatural",
-    "RTI",
-    "Languages",
-    "Engineering",
-    "Medicine",
-    "Drive",
-    "Pilot",
-    "Persuasion",
-    "Social Engineering",
-    "Intimidation",
-    "Etiquette",
-    "Scholar",
-    "Survival",
-    "Performance",
-    "Business",
-    "Animal Handling",
-    "Investigation", 
-    "Skill 1"]
+tiers = ["NPC", "Novice", "Veteran", "Expert", "Hero"]
 
-supernatural_classes = [
-    "Creation",
-    "Temporal/Spatial",
-    "Illusion",
-    "Evocation",
-    "Protection",
-    "Transmutation",
-    "Augmentation",
-    "Entropy"]
+with open ("attributes.json", "r") as r:
+    attribute_names = json.load(r)
+
+with open ("skills.json", "r") as r:
+    skill_names = json.load(r)
+
+with open ("supernatural_classes.json", "r") as r:
+    supernatural_classes = json.load(r)
+
+investigation_ranks = [
+    "Public",
+    "Restricted",
+    "Elite",
+    "Confidential",
+    "Top Secret"]
+
+# --------------------------------------------------------------------------- #
 
 # Game Balance
 
 # This code block contains the general tuning parameters for an implementation
 # of OpenD10. This is where you would make adjustments to make an implementation
 # more cinematic or realistic, game pacing go faster or slower, and so on.
+
+#                                    -----                                    #
 
 ## Core Balance
 xp_per_attribute = 10
@@ -76,6 +60,26 @@ credits_per_xp = 1000
 # the session rewards as all XP, as all credits, or a mix. The actual value
 # is just to scale credits, but at small values this can affect rounding.
 
+#                                    -----                                    #
+
+## Gear and Ability Balance
+gear_discount = 0.1 # This is a discount on abilities that can be lost, stolen, broken, etc.
+temp_buff_per_xp = 5 # How much of a bonus each XP grants in an ability
+
+#                                    -----                                    #
+
+## Feature Balance
+
+# The next set of discounts apply to the cost of features based on how often 
+# those features are likely to be used. Features that are always useful are 
+# not discounted. 
+common_feat_discount = 0.5
+seldom_feat_discount = 0.66
+rare_feat_discount = 0.75
+scarce_feat_discount = 0.9
+
+#                                    -----                                    #
+
 ## Character Creation
 starting_attributes = 25 * len(attribute_names)
 attributes_per_tier = 25
@@ -90,10 +94,14 @@ skills_per_tier = 3 * len(skill_names)
 # lower values mean chance plays more of a role in determining success and
 # higher values favor the PC's stats more than the dice roll.
 
+#                                    -----                                    #
+
 ## Investigation Balance
 weight_per_rating = 10
 # This affects how much a PC having contacts or resources contributes to the
 # progress of investigation scenes. Lower values highlight the PCs' skills more.
+
+#                                    -----                                    #
 
 ## Combat Balance
 xp_per_dmg_rating = 10
@@ -115,6 +123,10 @@ mod_cost_scalar = 5
 # eventually getting access to better ones. These ultimately relate to the feeling
 # of progress and high science/fantasy you want to achieve in your game.
 secs_per_round = 6
+low_light = 25 # penalty to attack rolls in low light
+no_light = 50 # penalty to attack rolls without light
+
+#                                    -----                                    #
 
 ## Supernatural Balance
 xp_to_ghost = 50 # This relates to the cost of being a ghost, but also
@@ -124,13 +136,13 @@ mp_burn_discount = 0.1 # This is the discount on abilities that permanently
                  # implants.
 subtle_spell_tax = 0.1 # This is a tax on abilities that cannot be countered,
                  # such as psychic abilities or casting without somatic tells.
-gear_discount = 0.1 # This is a discount on abilities that can be lost, stolen, broken, etc.
 permanent_gifted_scalar = 25 # This is multiplied by the spell's cost to make it permanent.
-temp_buff_per_xp = 5 # How much of a bonus each XP grants in an ability
+
+# --------------------------------------------------------------------------- #
 
 # Pricer Functions
 # These functions will help us use the balancing values above to price
-# abilities on the common basis of XP.
+# abilities on the common basis of experience points (XP).
 
 def melee_pricer(die_code,pips):
     price = ((die_code * xp_per_dmg_rating) + (pips * xp_per_dmg_rating / 5.5))

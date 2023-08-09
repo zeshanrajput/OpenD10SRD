@@ -1,0 +1,7 @@
+{
+    "Thrown Dagger":{"dice":0,"pips":3,"PB":75,"S":125,"M":300,"L":300},
+    "Pistol":{"dice":2,"pips":0,"PB":100,"S":75,"M":125,"L":250},
+    "Shotgun":{"dice":4,"pips":0,"PB":75,"S":100,"M":125,"L":300},
+    "Assault Rifle":{"dice":3,"pips":2,"PB":150,"S":100,"M":100,"L":150},
+    "Sniper Rifle":{"dice":5,"pips":0,"PB":250,"S":150,"M":125,"L":100}
+}

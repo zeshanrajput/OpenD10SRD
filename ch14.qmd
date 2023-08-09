@@ -79,13 +79,6 @@ These scenes reflect the characters' efforts to obtain information. This could b
 #| fig-cap: "The cost of various ranks of investigation resources in experience points."
 #| echo: false
 
-investigation_ranks = [
-    "Public",
-    "Restricted",
-    "Elite",
-    "Confidential",
-    "Top Secret"]
-
 ## Investigation Balance
 weight_per_rating = 10
 # This affects how much a PC having contacts or resources contributes to the 

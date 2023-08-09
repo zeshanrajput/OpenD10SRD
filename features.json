@@ -1,0 +1,67 @@
+[
+    {
+    "Feature":"Darkvision",
+    "Description":"You can see in dim light up to 15 meters away. Objects appear in hues of red and grey.",
+    "Cost":f"Costs {darkvision_price}."
+    },
+    {
+    "Feature":"Educated",
+    "Description":"You have spent some of your earnings improving yourself.",
+    "Cost":f"Costs {credits_per_xp} credits per experience point gained."
+    },
+    {
+    "Feature":"Exceptional Attribute",
+    "Description":"You are supernaturally talented in an attribute. You have an attribute score higher than the maximum allowable.",
+    "Cost":f"Costs {2 * xp_per_attribute} per attribute point over the maximum."
+    },
+    {
+    "Feature":"Ghost / AI",
+    "Description":"You exist on a different plane of existience. You will need some way to interact with the material plane, but dangers on the material plane may not affect you.",
+    "Cost":f"Costs {xp_to_ghost}."
+    },
+    {
+    "Feature":"Honorbound",
+    "Description":"You have sworn to follow a code of honor. Failure to do so may result in a decrease in supernatural ability, loss of status with a patron or faction, or worse.",
+    "Cost":"Gain 3x the value of the code of honor."
+    },
+    {
+    "Feature":"Invested",
+    "Description":"You have access to ongoing dividends from some source. You may earn bonus credits during event wrapups.",
+    "Cost":f"Costs 1 per {0.2 * credits_per_xp} credits."
+    },
+    {
+    "Feature":"Resilient",
+    "Description":"You are naturally hardier. You gain bonus hit points.",
+    "Cost":f"Costs {0.5 * xp_per_attribute} per hit point gained."
+    },
+    {
+    "Feature":"Specialized",
+    "Description":"You have specific training or experience within a skill. Confers a +10 bonus on checks where your specialization applied. May only be purchased once per skill.",
+    "Cost":f"Costs {2.5 * xp_per_skill}."
+    },
+    {
+    "Feature":"Supernatural",
+    "Description":"You are one of the rare individuals that has supernatural ability. Allows the character to train in a supernatural skill.",
+    "Cost":f"Costs {xp_per_supernatural_class * len(supernatural_classes)}."
+    },
+    {
+    "Feature":"Unregistered",
+    "Description":"You have no identity in most common societies. You will need a fake identity for many actions, but it will be harder for authorities to track you.",
+    "Cost":"Gain 10."
+    },
+    {
+    "Feature":"Unskilled",
+    "Description":"(Character Creation only). You've spent more time in life honing your natural talents rather than using them. You have fewer skill points to spend in character creation.",
+    "Cost":f"Gain {xp_per_skill} times the number of skill points surrendered."
+    },
+    {
+    "Feature":"Untalented",
+    "Description":"(Character Creation only). You're not as naturally as gifted as your peers. You have fewer attribute points to spend in character creation.",
+    "Cost":f"Gain {xp_per_attribute} times the number of skill points surrendered."
+    },
+    {
+    "Feature":"Wealthy",
+    "Description":"You have spent some of your time working or otherwise trading your skills for cash.",
+    "Cost":f"Costs 1 per {credits_per_xp} credits."
+    }
+]

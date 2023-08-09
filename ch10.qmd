@@ -10,38 +10,71 @@ The following list of features is a suggestion which may be expanded upon or ove
 
 from sysdef import *
 
-features_table = pd.DataFrame({
-        'Unskilled': ["(Character Creation only). You've spent more time in life honing your natural talents rather than using them. You have fewer skill points to spend in character creation.",
-                      f"Gain {xp_per_skill} times the number of skill points surrendered."],
-        'Untalented': ["(Character Creation only). You’re not as naturally as gifted as your peers. You have fewer attribute points to spend in character creation.",
-                       f"Gain {xp_per_attribute} times the number of skill points surrendered."],
-        'Supernatural': ["You are one of the rare individuals that has supernatural ability. Allows the character to train in a supernatural skill.",
-                         f"Costs {xp_per_supernatural_class * len(supernatural_classes)}."],
-        'Honorbound': ["You have sworn to follow a code of honor. Failure to do so may result in a decrease in supernatural ability, loss of status with a patron or faction, or worse.",
-                       "Gain 3x the value of the code of honor."],
-        'Unregistered': ["You have no identity in most common societies. You will need a fake identity for many actions, but it will be harder for authorities to track you.",
-                       "Gain 10."],
-        'Ghost / AI': ["You exist on a different plane of existience. You will need some way to interact with the material plane, but dangers on the material plane may not affect you.",
-                       f"Costs {xp_to_ghost}."],
-        'Resilient': ["You are naturally hardier. You gain bonus hit points.",
-                      f"Costs {0.5 * xp_per_attribute} per hit point gained."],
-        'Exceptional Attribute': ["You are supernaturally talented in an attribute. You have an attribute score higher than the maximum allowable.",
-                        f"Costs {2 * xp_per_attribute} per attribute point over the maximum."],
-        'Specialized': ["You have specific training or experience within a skill. Confers a +10 bonus on checks where your specialization applied. May only be purchased once per skill.",
-                        f"Costs {2.5 * xp_per_skill}."],
-        'Wealthy': ["You have spent some of your time working or otherwise trading your skills for cash.",
-                    f"Costs 1 per {credits_per_xp} credits."],
-        'Invested': ["You have access to ongoing dividends from some source. You may earn bonus credits during event wrapups.",
-                     f"Costs 1 per {0.2 * credits_per_xp} credits."],
-        'Gifted': ["You are permanently bestowed with a supernatural sense, power, or ability. See the 'Supernatural' section for more information.",
-                   f"Costs {permanent_gifted_scalar} times the cost of the ability."],
-        'Educated': ["You have spent some of your earnings improving yourself.",
-                     f"Costs {credits_per_xp} credits per experience point gained."],
-        'Darkvision': ['You can see in dim light up to 15 meters away. Objects appear in hues of red and grey.', 'Costs 10.']
-        }
-    )
+# The examples here show how to derive the values of features based on the game
+# balance mechanics of the world. For example, Darkvision gives a character a 
+# bonus on visual perception checks that only applies when in low-light. This 
+# is a fairly common but not ubiquitous occurrence, so we can price Darkvision 
+# using the common feature discount in the system definitions file.
 
-features_table = features_table.sort_index(axis=1).T
+darkvision_price = round(buff_pricer(low_light) * (1 - common_feat_discount))
+
+features_table = pd.DataFrame(
+    {
+    "Darkvision":{
+        "Description":"You can see in dim light up to 15 meters away. Objects appear in hues of red and grey.",
+        "Cost":f"Costs {darkvision_price}."
+        },
+    "Educated":{
+    "Description":"You have spent some of your earnings improving yourself.",
+    "Cost":f"Costs {credits_per_xp} credits per experience point gained."
+        },
+    "Exceptional Attribute":{
+    "Description":"You are supernaturally talented in an attribute. You have an attribute score higher than the maximum allowable.",
+    "Cost":f"Costs {2 * xp_per_attribute} per attribute point over the maximum."
+        },
+    "Ghost / AI":{
+    "Description":"You exist on a different plane of existience. You will need some way to interact with the material plane, but dangers on the material plane may not affect you.",
+    "Cost":f"Costs {xp_to_ghost}."
+        },
+    "Honorbound":{
+    "Description":"You have sworn to follow a code of honor. Failure to do so may result in a decrease in supernatural ability, loss of status with a patron or faction, or worse.",
+    "Cost":"Gain 3x the value of the code of honor."
+        },
+    "Invested":{
+    "Description":"You have access to ongoing dividends from some source. You may earn bonus credits during event wrapups.",
+    "Cost":f"Costs 1 per {0.2 * credits_per_xp} credits."
+        },
+    "Resilient":{
+    "Description":"You are naturally hardier. You gain bonus hit points.",
+    "Cost":f"Costs {0.5 * xp_per_attribute} per hit point gained."
+        },
+    "Specialized":{
+    "Description":"You have specific training or experience within a skill. Confers a +10 bonus on checks where your specialization applied. May only be purchased once per skill.",
+    "Cost":f"Costs {2.5 * xp_per_skill}."
+        },
+    "Supernatural":{
+    "Description":"You are one of the rare individuals that has supernatural ability. Allows the character to train in a supernatural skill.",
+    "Cost":f"Costs {xp_per_supernatural_class * len(supernatural_classes)}."
+        },
+    "Unregistered":{
+    "Description":"You have no identity in most common societies. You will need a fake identity for many actions, but it will be harder for authorities to track you.",
+    "Cost":"Gain 10."
+        },
+    "Unskilled":{
+    "Description":"(Character Creation only). You've spent more time in life honing your natural talents rather than using them. You have fewer skill points to spend in character creation.",
+    "Cost":f"Gain {xp_per_skill} times the number of skill points surrendered."
+        },
+    "Untalented":{
+    "Description":"(Character Creation only). You're not as naturally as gifted as your peers. You have fewer attribute points to spend in character creation.",
+    "Cost":f"Gain {xp_per_attribute} times the number of skill points surrendered."
+    },
+    "Wealthy":{
+    "Description":"You have spent some of your time working or otherwise trading your skills for cash.",
+    "Cost":f"Costs 1 per {credits_per_xp} credits."
+    }
+})
+
+features_table = features_table.sort_index(axis=1).T 
 
 display(md(tabulate(features_table,
            headers=["Name", "Description", "Value"])))

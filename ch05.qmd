@@ -1,1 +1,3 @@
 # Classes
+
+Implementations will modify this chapter to list the classes available in their world. A few sample classes will be added here soon.

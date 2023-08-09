@@ -1,0 +1,22 @@
+{
+    "Dagger":{
+        "dice":0,
+        "pips":3
+    },
+    "Short Sword":{
+        "dice":1,
+        "pips":0
+    },
+    "Long Sword":{
+        "dice":1,
+        "pips":2
+    },
+    "Bastard Sword":{
+        "dice":1,
+        "pips":4
+    },
+    "Great Sword":{
+        "dice":2,
+        "pips":0
+    }
+}

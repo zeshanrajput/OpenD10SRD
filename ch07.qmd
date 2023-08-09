@@ -1,1 +1,3 @@
 # Backgrounds
+
+Implementations will modify this chapter to list the backgrounds available in their world, if they choose to use them. A few sample backgrounds will be added here soon.
