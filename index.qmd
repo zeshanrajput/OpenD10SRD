@@ -1,5 +1,5 @@
 # Welcome
 
-OpenD10 is available as an "Open Access" HTML version on this site (insert GitHub pages link here) in addition to the usual print and e-book formats. This edition was initially published in August 2023 and will have errata fixed periodically. If you encounter any errata, please report them here (insert GitHub issues link here). 
+OpenD10 is available as an "Open Access" HTML version on this site (https://bit.ly/OpenD10SRD). This edition was initially published in August 2023 and will have errata fixed periodically. If you encounter any errata, please report them here: https://github.com/zeshanrajput/OpenD10SRD/issues. 
 
 This website is and will always be free, licensed under the [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) License. Physical copies of this book are not yet available, but when it's near a "First Edition" we will work on that. 
